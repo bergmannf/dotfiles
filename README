@@ -1,0 +1,3 @@
+Repository is used to version dotfiles across different machines.
+
+symlinking.py is used to create symlinks to the user's home directory.
