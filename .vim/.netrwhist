@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/media/datapart/Dokumente/Code/Git/e_comm/Coursework_One'
+let g:netrw_dirhist_2='/media/datapart/Dokumente/Dropbox/My Dropbox/Outlines/Private'
+let g:netrw_dirhist_3='/media/datapart/Dokumente/Code/Git/e_comm/Coursework_One'
