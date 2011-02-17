@@ -15,10 +15,11 @@ git_bundles = [
   "git://github.com/tsaleh/vim-tcomment.git",
   "git://github.com/cschlueter/vim-wombat.git",
   "git://github.com/mineiro/vim-latex.git",
-  "git://github.com/nathanaelkane/vim-indent-guides.git",
+  "git://githb.com/nathanaelkane/vim-indent-guides.git",
   "git://github.com/vim-scripts/molokai.git",
   "git://repo.or.cz/vcscommand",
   "git://github.com/jceb/vim-orgmode.git", 
+  "git://github.com/wincent/Command-T.git",
 ]
 
 vim_org_scripts = [
