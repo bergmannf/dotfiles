@@ -19,6 +19,7 @@ git_bundles = [
   "git://github.com/vim-scripts/molokai.git",
   "git://repo.or.cz/vcscommand",
   "git://github.com/vim-scripts/vimwiki.git",
+  "git://github.com/wincent/Command-T.git",
 ]
 
 vim_org_scripts = [
