@@ -18,7 +18,7 @@ git_bundles = [
   "git://github.com/nathanaelkane/vim-indent-guides.git",
   "git://github.com/vim-scripts/molokai.git",
   "git://repo.or.cz/vcscommand",
-  "git://github.com/jceb/vim-orgmode.git", 
+  "git://github.com/vim-scripts/vimwiki.git",
 ]
 
 vim_org_scripts = [
