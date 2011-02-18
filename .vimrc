@@ -45,6 +45,8 @@ set incsearch " ...dynamically as they are typed.
 " Make linenumbering on by default
 set number
 
+let mapleader="," "remapping the mapleader from \ to ,
+
 set nocompatible
 " Allow supertab and snipMate to work together.
 let g:SuperTabDefaultCompletionType = "context"
