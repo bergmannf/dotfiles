@@ -20,6 +20,7 @@ git_bundles = [
   "git://repo.or.cz/vcscommand",
   "git://github.com/vim-scripts/vimwiki.git",
   "git://github.com/wincent/Command-T.git",
+  "git://github.com/sjbach/lusty.git",
 ]
 
 vim_org_scripts = [
