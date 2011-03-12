@@ -21,6 +21,8 @@ git_bundles = [
   "git://github.com/vim-scripts/vimwiki.git",
   "git://github.com/wincent/Command-T.git",
   "git://github.com/sjbach/lusty.git",
+  "git://github.com/jceb/vim-orgmode.git",
+  "git://github.com/vim-scripts/taglist.vim.git",
 ]
 
 vim_org_scripts = [

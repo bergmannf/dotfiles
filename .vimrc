@@ -28,6 +28,10 @@ set noswapfile " do not write swap files
 " Start scrolling three lines before a buffer ends.
 set scrolloff=3
 
+" More natural line wrapping
+nnoremap j gj
+nnoremap k gk
+
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
 " to turn on yourself, or just set them all to be sure.
@@ -51,13 +55,23 @@ set nocompatible
 " Allow supertab and snipMate to work together.
 let g:SuperTabDefaultCompletionType = "context"
 
+" Make vim autocompletion behave like other IDEs
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 " Set font and colorscheme.
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Monaco\ 10
+    set guifont=Monaco\ 9
   elseif has("gui_win32")
     set guifont=Monaco:h9:cANSI
   endif
   colors molokai 
 endif
 
+" Setting the path for VimWiki
+let g:vimwiki_list = [{'path': '$DROPBOX/Outlines/vimwiki/main'}, {'path': '$DROPBOX/Outlines/vimwiki/university'}]
