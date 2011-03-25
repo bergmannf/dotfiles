@@ -57,6 +57,9 @@ set nocompatible
 " Allow supertab and snipMate to work together.
 let g:SuperTabDefaultCompletionType = "context"
 
+let g:indent_guides_guide_size = 1
+
+
 " Make vim autocompletion behave like other IDEs
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
