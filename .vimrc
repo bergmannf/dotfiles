@@ -75,8 +75,16 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Monaco:h9:cANSI
   endif
-  colors molokai 
+  colors jellybeans 
 endif
 
 " Setting the path for VimWiki
 let g:vimwiki_list = [{'path': '$DROPBOX/Outlines/vimwiki/main'}, {'path': '$DROPBOX/Outlines/vimwiki/university'}]
+
+" Setting up syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+
