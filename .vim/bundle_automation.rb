@@ -13,10 +13,8 @@ git_bundles = [
 	"git://github.com/tsaleh/vim-align.git",
 	"git://github.com/tsaleh/vim-supertab.git",
 	"git://github.com/tsaleh/vim-tcomment.git",
-	"git://github.com/cschlueter/vim-wombat.git",
 	"git://github.com/mineiro/vim-latex.git",
 	"git://github.com/nathanaelkane/vim-indent-guides.git",
-	"git://github.com/vim-scripts/molokai.git",
 	"git://repo.or.cz/vcscommand",
 	"git://github.com/vim-scripts/vimwiki.git",
 	"git://github.com/wincent/Command-T.git",
@@ -26,9 +24,17 @@ git_bundles = [
 	"git://github.com/tpope/vim-ragtag.git",
 	"git://github.com/2072/PHP-Indenting-for-VIm.git",
 	#"git://github.com/hsitz/VimOrganizer.git",
-	"git://github.com/nanotech/jellybeans.vim.git",
 	"git://github.com/mattn/zencoding-vim.git",
 	"git://github.com/scrooloose/syntastic.git",
+	"git://github.com/kevinw/pyflakes-vim.git",
+	# Color schemes
+	"git://github.com/vim-scripts/codeburn.git",
+	"git://github.com/cschlueter/vim-mustang.git",
+	"git://github.com/vim-scripts/bclear.git",
+	"git://github.com/nanotech/jellybeans.vim.git",
+	"git://github.com/vim-scripts/molokai.git",
+	"git://github.com/cschlueter/vim-wombat.git",
+	"git://github.com/vim-scripts/xoria256.vim.git",
 ]
 
 vim_org_scripts = [

@@ -75,7 +75,7 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Monaco:h9:cANSI
   endif
-  colors jellybeans 
+  colors xoria256
 endif
 
 " Setting the path for VimWiki
