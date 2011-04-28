@@ -56,26 +56,24 @@ let mapleader="," "remapping the mapleader from \ to ,
 set nocompatible
 " Allow supertab and snipMate to work together.
 let g:SuperTabDefaultCompletionType = "context"
-
+" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let g:indent_guides_guide_size = 1
 
 
 " Make vim autocompletion behave like other IDEs
-set completeopt=longest,menuone
+" set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Set font and colorscheme.
 if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Monaco\ 9
-  elseif has("gui_win32")
-    set guifont=Monaco:h9:cANSI
-  endif
-  colors xoria256
+	if has("gui_gtk2")
+		set guifont=Droid\ Sans\ Mono\ 9 
+	elseif has("gui_win32")
+		set guifont=Monaco:h9:cANSI
+	endif
+	colors wombat
 endif
 
 " Setting the path for VimWiki
@@ -88,3 +86,21 @@ set statusline+=%*
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
+" TODO: write own ftplugin for python
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+
+" Omnicompletion settings
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+" Zen coding changes
+let g:user_zen_expandabbr_key = '<c-e>'

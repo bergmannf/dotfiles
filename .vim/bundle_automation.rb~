@@ -39,7 +39,6 @@ git_bundles = [
 	"git://github.com/therubymug/vim-pyte.git",
 	"git://github.com/vim-scripts/Fruidle.git",
 	"git://github.com/vim-scripts/habiLight.git",
-	"git://github.com/vim-scripts/nuvola.vim.git",
   ]
 
 vim_org_scripts = [
