@@ -18,7 +18,6 @@ git_bundles = [
 	"git://repo.or.cz/vcscommand",
 	"git://github.com/vim-scripts/vimwiki.git",
 	"git://github.com/wincent/Command-T.git",
-	"git://github.com/sjbach/lusty.git",
 	"git://github.com/jceb/vim-orgmode.git",
 	"git://github.com/vim-scripts/taglist.vim.git",
 	"git://github.com/tpope/vim-ragtag.git",
@@ -29,6 +28,7 @@ git_bundles = [
 	"git://github.com/kevinw/pyflakes-vim.git",
 	"git://github.com/tpope/vim-fugitive.git",
 	# Color schemes
+	"git://github.com/vim-scripts/Atom.git",
 	"git://github.com/vim-scripts/codeburn.git",
 	"git://github.com/cschlueter/vim-mustang.git",
 	"git://github.com/vim-scripts/bclear.git",
@@ -50,6 +50,11 @@ require 'open-uri'
 
 bundles_dir = File.join(File.dirname(__FILE__), "bundle")
 
+exec_dir = Dir.pwd
+
+execution_after_clone = [
+    "cd #{exec_dir}/bundle/Command-T; rake make",
+]
 FileUtils.cd(bundles_dir)
 
 puts "Trashing everything (lookout!)"
@@ -69,5 +74,10 @@ vim_org_scripts.each do |name, script_id, script_type|
 	File.open(local_file, "w") do |file|
 		file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
 	end
+end
+
+execution_after_clone.each do |task|
+    puts "Running #{task}"
+    `#{task}`
 end
 

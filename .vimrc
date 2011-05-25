@@ -73,7 +73,7 @@ if has("gui_running")
 	elseif has("gui_win32")
 		set guifont=Monaco:h9:cANSI
 	endif
-	colors wombat
+	colors atom 
 endif
 
 " Setting the path for VimWiki
@@ -104,3 +104,15 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 " Zen coding changes
 let g:user_zen_expandabbr_key = '<c-e>'
+
+" Tlist_Ctags only on mac (TODO: does not work for cmd vim)
+if has("macunix")
+    let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+endif
+
+" Status line hacks
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
+set laststatus=2
+
+" Ensure vim-latex is used even on empty tex-files
+let g:tex_flavor='latex'
