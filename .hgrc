@@ -1,0 +1,8 @@
+[ui]
+username = Florian Bergmann <Bergmann.F@gmail.com>
+
+[alias]
+addremove = addremove --similarity 100
+
+[extensions]
+prompt = ~/dotfiles/hg-prompt/prompt.py
