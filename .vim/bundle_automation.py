@@ -31,7 +31,6 @@ git_bundles = [
         "git://github.com/vim-scripts/Atom.git",
         "git://github.com/vim-scripts/codeburn.git",
         "git://github.com/cschlueter/vim-mustang.git",
-        "git://github.com/vim-scripts/bclear.git",
         "git://github.com/nanotech/jellybeans.vim.git",
         "git://github.com/vim-scripts/molokai.git",
         "git://github.com/cschlueter/vim-wombat.git",
@@ -39,15 +38,19 @@ git_bundles = [
         "git://github.com/therubymug/vim-pyte.git",
         "git://github.com/vim-scripts/Fruidle.git",
         "git://github.com/vim-scripts/habiLight.git",
-        "git://github.com/vim-scripts/nuvola.vim.git",
         "git://github.com/tpope/vim-vividchalk.git",
+        "git://github.com/vim-scripts/Sorcerer.git" ,
+        "git://github.com/vim-scripts/rdark.git",
+        "git://gist.github.com/1025957.git",
+        "git://github.com/altercation/vim-colors-solarized.git",
         ]
 
 vim_org_scripts = [
         ]
 
 commands_after_fetch = [
-        ("Command-T", "rake make")
+        ("Command-T", "rake make"),
+        ("1025957", "mkdir -p ../bespin/colors; mv *.vim ../bespin/colors"),
         ]
 
 import sys
@@ -75,5 +78,6 @@ for repo in git_bundles:
     os.system("git clone %s" % (repo))
 
 for command in commands_after_fetch:
+    os.chdir(bundle_dir)
     os.chdir(os.path.join(bundle_dir, command[0]))
     os.system(command[1])

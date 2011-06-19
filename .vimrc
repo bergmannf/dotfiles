@@ -12,8 +12,7 @@ set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
 set softtabstop=4
 set shiftwidth=4  " number of spaces to use for autoindenting
-set backspace=indent,eol,start
-                  " allow backspacing over everything in insert mode
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
@@ -23,12 +22,28 @@ set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 "*******************
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-                  "    case-sensitive otherwise
-set smarttab      " insert tabs on the start of a line according to
-                  "    shiftwidth, not tabstop
+set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
+
+"********************************
+"* Remapping Movement in Splits *
+"********************************
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+"********************
+"* Other Remappings *
+"********************
+nnoremap j gj
+nnoremap k gk
+map <leader>g :GundoToggle<CR>
+map <leader>td <Plug>TaskList
+map <leader>pt <Plug>MakeGreen
+let mapleader="," "remapping the mapleader from \ to ,
 
 "*******************
 "* Random Settings *
@@ -52,10 +67,6 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
-" More natural line wrapping
-nnoremap j gj
-nnoremap k gk
-
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
 " to turn on yourself, or just set them all to be sure.
@@ -66,7 +77,6 @@ filetype indent on
 
 set ofu=syntaxcomplete#Complete
 
-let mapleader="," "remapping the mapleader from \ to ,
 
 " Allow supertab and snipMate to work together.
 let g:SuperTabDefaultCompletionType = "context"
@@ -122,8 +132,6 @@ set laststatus=2
 " Ensure vim-latex is used even on empty tex-files
 let g:tex_flavor='latex'
 
-map <leader>td <Plug>TaskList
-map <leader>pt <Plug>MakeGreen
 
 let g:pyflakes_use_quickfix = 0
 
