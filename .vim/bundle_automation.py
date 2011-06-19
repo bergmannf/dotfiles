@@ -27,6 +27,7 @@ git_bundles = [
         "git://github.com/alfredodeza/pytest.vim.git",
         "git://github.com/reinh/vim-makegreen",
         "git://github.com/rson/vim-conque.git",
+        "git://github.com/godlygeek/tabular.git,"
         # Color schemes
         "git://github.com/vim-scripts/Atom.git",
         "git://github.com/vim-scripts/codeburn.git",
