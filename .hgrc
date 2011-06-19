@@ -3,7 +3,13 @@ username = Florian Bergmann <Bergmann.F@gmail.com>
 
 [alias]
 addremove = addremove --similarity 100
+nudge = push --rev .
+
+[diff]
+git = True
 
 [extensions]
 prompt = ~/dotfiles/hg-prompt/prompt.py
 hgext.mq = 
+graphlog = 
+hgext.record = 
