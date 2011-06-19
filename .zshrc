@@ -29,4 +29,4 @@ source ~/.venvburrito/startup.sh
 bindkey -v
 
 # Customize to your needs...
-export PATH=/home/florian/.venvburrito/bin:/home/florian/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
+export PATH=~/.venvburrito/bin:~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
