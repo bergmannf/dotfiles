@@ -38,12 +38,15 @@ map <c-h> <c-w>h
 "********************
 "* Other Remappings *
 "********************
+let mapleader="," "remapping the mapleader from \ to ,
 nnoremap j gj
 nnoremap k gk
 map <leader>g :GundoToggle<CR>
 map <leader>td <Plug>TaskList
 map <leader>pt <Plug>MakeGreen
-let mapleader="," "remapping the mapleader from \ to ,
+nmap <silent> <Leader>f :CommandT<CR>
+nmap <silent> <Leader>F :CommandTBuffer<CR>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "*******************
 "* Random Settings *
@@ -96,7 +99,7 @@ if has("gui_running")
 	elseif has("gui_win32")
 		set guifont=Monaco:h9:cANSI
 	endif
-	colors molokai 
+	colors rdark 
 endif
 
 " Setting the path for VimWiki
