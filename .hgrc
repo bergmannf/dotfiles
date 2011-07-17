@@ -13,3 +13,4 @@ prompt = ~/dotfiles/hg-prompt/prompt.py
 hgext.mq = 
 graphlog = 
 hgext.record = 
+color =

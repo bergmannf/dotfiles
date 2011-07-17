@@ -38,12 +38,26 @@ map <c-h> <c-w>h
 "********************
 "* Other Remappings *
 "********************
+let mapleader="," "remapping the mapleader from \ to ,
 nnoremap j gj
 nnoremap k gk
 map <leader>g :GundoToggle<CR>
 map <leader>td <Plug>TaskList
 map <leader>pt <Plug>MakeGreen
-let mapleader="," "remapping the mapleader from \ to ,
+nmap <silent> <Leader>f :CommandT<CR>
+nmap <silent> <Leader>F :CommandTBuffer<CR>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+"***************"
+" Rope Settings "
+"***************"
+
+" Rope AutoComplete
+let ropevim_vim_completion = 1
+let ropevim_extended_complete = 1
+let g:ropevim_autoimport_modules = ["os.*","traceback","django.*", "xml.etree"]
+imap <c-space> <C-R>=RopeCodeAssistInsertMode()<CR>
+
 
 "*******************
 "* Random Settings *
@@ -92,11 +106,11 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumv
 " Set font and colorscheme.
 if has("gui_running")
 	if has("gui_gtk2")
-		set guifont=Droid\ Sans\ Mono\ 9 
+		set guifont=monaco\ 9 
 	elseif has("gui_win32")
 		set guifont=Monaco:h9:cANSI
 	endif
-	colors molokai 
+	colors rdark 
 endif
 
 " Setting the path for VimWiki

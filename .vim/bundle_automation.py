@@ -27,6 +27,7 @@ git_bundles = [
         "git://github.com/alfredodeza/pytest.vim.git",
         "git://github.com/reinh/vim-makegreen",
         "git://github.com/rson/vim-conque.git",
+        "git://github.com/godlygeek/tabular.git,"
         # Color schemes
         "git://github.com/vim-scripts/Atom.git",
         "git://github.com/vim-scripts/codeburn.git",
@@ -36,7 +37,16 @@ git_bundles = [
         "git://github.com/cschlueter/vim-wombat.git",
         "git://github.com/vim-scripts/xoria256.vim.git",
         "git://github.com/therubymug/vim-pyte.git",
-        "git://github.com/vim-scripts/Fruidle.git",
+        # Color schemes
+        "git://github.com/vim-scripts/Atom.git",
+        "git://github.com/vim-scripts/codeburn.git",
+        "git://github.com/cschlueter/vim-mustang.git",
+        "git://github.com/nanotech/jellybeans.vim.git",
+        "git://github.com/vim-scripts/molokai.git",
+        "git://github.com/cschlueter/vim-wombat.git",
+        "git://github.com/gmarik/ingretu.git",
+        "git://github.com/vim-scripts/xoria256.vim.git",
+        "git://github.com/therubymug/vim-pyte.git",
         "git://github.com/vim-scripts/habiLight.git",
         "git://github.com/tpope/vim-vividchalk.git",
         "git://github.com/vim-scripts/Sorcerer.git" ,
