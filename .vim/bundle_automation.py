@@ -37,7 +37,7 @@ git_bundles = [
         "git://github.com/gmarik/ingretu.git",
         "git://github.com/vim-scripts/xoria256.vim.git",
         "git://github.com/therubymug/vim-pyte.git",
-        "git://github.com/vim-scripts/habiLight.git",
+        "git://github.com/tpope/vim-vividchalk.git",
         "git://github.com/vim-scripts/Sorcerer.git" ,
         "git://github.com/vim-scripts/rdark.git",
         "git://gist.github.com/1025957.git",
