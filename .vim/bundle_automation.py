@@ -11,7 +11,6 @@ git_bundles = [
         "git://github.com/tsaleh/vim-tcomment.git",
         "git://github.com/mineiro/vim-latex.git",
         "git://github.com/wincent/Command-T.git",
-        "git://github.com/jceb/vim-orgmode.git",
         "git://github.com/majutsushi/tagbar.git",
         "git://github.com/tpope/vim-ragtag.git",
         "git://github.com/mattn/zencoding-vim.git",
@@ -39,11 +38,12 @@ git_bundles = [
         "git://github.com/vim-scripts/xoria256.vim.git",
         "git://github.com/therubymug/vim-pyte.git",
         "git://github.com/vim-scripts/habiLight.git",
-        "git://github.com/tpope/vim-vividchalk.git",
         "git://github.com/vim-scripts/Sorcerer.git" ,
         "git://github.com/vim-scripts/rdark.git",
         "git://gist.github.com/1025957.git",
         "git://github.com/altercation/vim-colors-solarized.git",
+        "git://github.com/jpo/vim-railscasts-theme.git",
+        "git://github.com/vim-scripts/mayansmoke.git",
         ]
 
 vim_org_scripts = [
