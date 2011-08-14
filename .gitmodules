@@ -127,3 +127,6 @@
 [submodule ".vim/bundle/zenburn"]
 	path = .vim/bundle/zenburn
 	url = https://github.com/vim-scripts/Zenburn.git
+[submodule ".vim/compiler/pylint.vim"]
+	path = .vim/compiler/pylint.vim
+	url = https://github.com/vim-scripts/pylint.vim.git
