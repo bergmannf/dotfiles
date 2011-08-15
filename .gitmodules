@@ -130,3 +130,6 @@
 [submodule ".vim/bundle/skittlees-dark"]
 	path = .vim/bundle/skittlees-dark
 	url = https://github.com/vim-scripts/Skittles-Dark.git
+[submodule ".vim/bundle/darkspectrum"]
+	path = .vim/bundle/darkspectrum
+	url = https://github.com/vim-scripts/darkspectrum.git
