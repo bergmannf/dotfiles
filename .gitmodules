@@ -133,3 +133,6 @@
 [submodule ".vim/bundle/darkspectrum"]
 	path = .vim/bundle/darkspectrum
 	url = https://github.com/vim-scripts/darkspectrum.git
+[submodule ".vim/bundle/ir-black"]
+	path = .vim/bundle/ir-black
+	url = https://github.com/wgibbs/vim-irblack.git
