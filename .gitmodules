@@ -136,3 +136,9 @@
 [submodule ".vim/bundle/ir-black"]
 	path = .vim/bundle/ir-black
 	url = https://github.com/wgibbs/vim-irblack.git
+[submodule ".vim/bundle/underwater-mod"]
+	path = .vim/bundle/underwater-mod
+	url = https://github.com/mgutz/vim-colors.git
+[submodule ".vim/bundle/underwater"]
+	path = .vim/bundle/underwater
+	url = https://github.com/imissmyjuno/Underwater-VIM-theme.git
