@@ -1,6 +1,5 @@
 import os
 import sys
-import subprocess
 import platform
 import glob
 import ctypes
@@ -8,6 +7,16 @@ import ctypes
 home_dir = os.path.expanduser("~")
 
 source_dir = sys.path[0]
+
+ignore_items = ['.git',
+'symlinking.py',
+'initialize_bundles.sh',
+'hg-prompt',
+'oh-my-zsh',
+'README']
+
+special_items = {'awesome': '.config/awesome',
+'openbox': '.config/openbox'}
 
 print("home is: ", home_dir)
 
@@ -27,11 +36,23 @@ def create_windows_symlink(item, sym_location, is_dir):
 def create_unix_symlink(item_name, sym_location):
     os.symlink(item, sym_location)
 
-# Will only work for *NIX style operating systems.
-for item in glob.glob(os.path.join(source_dir, ".*")):
+def create_needed_folders(path):
+    """Create all folders of the given path.
+
+    Equivalent to
+        mkdir -p path
+    """
+    os.makedirs(path, 755)
+
+for item in glob.glob(os.path.join(source_dir, "*")):
     item_name = os.path.basename(item)
-    if item_name != ".git":
-        sym_location = os.path.join(home_dir, item_name)
+    if item_name not in ignore_items:
+        if item_name in special_items.keys():
+            link_path = special_items[item_name]
+            sym_location = os.path.join(home_dir, special_items[item_name])
+            create_needed_folders(link_path)
+        else:
+            sym_location = os.path.join(home_dir, item_name)
         print("Attempting to symlink %s to %s." % (item, sym_location))
         # TODO: Clean an already existing symlink.
         if (os.path.exists(sym_location)):
@@ -43,4 +64,3 @@ for item in glob.glob(os.path.join(source_dir, ".*")):
                 create_windows_symlink(item, sym_location, False)
         else:
             create_unix_symlink(item_name, sym_location)
-
