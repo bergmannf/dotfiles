@@ -44,8 +44,7 @@ nnoremap k gk
 map <leader>g :GundoToggle<CR>
 map <leader>td <Plug>TaskList
 map <leader>pt <Plug>MakeGreen
-nmap <silent> <Leader>f :CommandT<CR>
-nmap <silent> <Leader>F :CommandTBuffer<CR>
+let g:ctrlp_map = '<Leader>f'
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "***************"
@@ -106,11 +105,11 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumv
 " Set font and colorscheme.
 if has("gui_running")
 	if has("gui_gtk2")
-		set guifont=monaco\ 9 
+		set guifont=Droid\ Sans\ Mono\ 9 
 	elseif has("gui_win32")
 		set guifont=Monaco:h9:cANSI
 	endif
-	colors rdark 
+	colors wombat
 endif
 
 " Setting the path for VimWiki
