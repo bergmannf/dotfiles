@@ -142,3 +142,6 @@
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/vim-tomorrow"]
+	path = .vim/bundle/vim-tomorrow
+	url = https://github.com/ChrisKempson/Vim-Tomorrow-Theme.git

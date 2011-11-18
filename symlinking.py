@@ -44,7 +44,7 @@ def create_needed_folders(path):
     """
     os.makedirs(path, 755)
 
-for item in glob.glob(os.path.join(source_dir, "*")):
+for item in glob.glob(os.path.join(source_dir, ".*")):
     item_name = os.path.basename(item)
     if item_name not in ignore_items:
         if item_name in special_items.keys():
