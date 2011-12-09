@@ -1,0 +1,16 @@
+background no
+double_buffer yes 
+out_to_console yes 
+own_window no
+update_interval 1.0 
+font -*-terminus-*-*-*-*-*-*-*-*-*-*-iso8859-*
+ 
+TEXT
+^fg(\#f57900)^i(.dzen/icons/cpu.xbm) ^fg()${cpu cpu0}% \
+^fg(\#f57900)^i(.dzen/icons/cpu.xbm) ^fg()${cpu cpu1}% \
+^fg(\#f57900)^i(.dzen/icons/cpu.xbm) ^fg()${cpu cpu2}% \
+^fg(\#f57900)^i(.dzen/icons/cpu.xbm) ^fg()${cpu cpu3}% \
+^fg(\#f57900)^i(.dzen/icons/temp.xbm) ^fg()${execi 60 aticonfig --od-gettemperature | grep Temperature | sed 's/.* - //g'} \
+^fg(\#f57900)^i(.dzen/icons/mem.xbm) ^fg()$memperc% \
+^fg(\#f57900)^i(.dzen/icons/arch.xbm) ^fg()${entropy_avail}/${entropy_poolsize} \
+^fg(\#f57900)^i(.dzen/icons/clock.xbm) ^fg()${time %b %e %H:%M}

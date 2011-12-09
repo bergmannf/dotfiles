@@ -45,6 +45,8 @@ map <leader>g :GundoToggle<CR>
 map <leader>td <Plug>TaskList
 map <leader>pt <Plug>MakeGreen
 let g:ctrlp_map = '<Leader>f'
+let g:ctrlp_max_height = 20
+
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "***************"
@@ -112,8 +114,8 @@ if has("gui_running")
 	colors wombat
 endif
 
-" Setting the path for VimWiki
-let g:vimwiki_list = [{'path': '$DROPBOX/Outlines/vimwiki/main'}, {'path': '$DROPBOX/Outlines/vimwiki/university'}]
+" Hide Toolbar
+set guioptions-=T
 
 " Setting up syntastic
 set statusline+=%#warningmsg#
@@ -129,6 +131,11 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+" Other completions (like wildmenu)
+
+set wildmenu
+set wildmode=longest:full
 
 " Zen coding changes
 let g:user_zen_expandabbr_key = '<c-e>'
