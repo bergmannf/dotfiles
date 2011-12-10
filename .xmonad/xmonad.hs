@@ -48,7 +48,7 @@ main = do
         , normalBorderColor = myBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , terminal = myTerminal
-        , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
+        , manageHook = myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts $ myLayoutHook
         , logHook = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
         , workspaces = myWorkspaces
@@ -59,7 +59,7 @@ myBorderWidth = 2
 myBorderColor = "#e9b96e"
 myFocusedBorderColor = "#f57900"
 myBitmapDir = "/home/florian/.dzen/icons"
-myTerminal = "gnome-terminal"
+myTerminal = "urxvt"
 myWorkspaces = ["1:main", "2:web", "3:dev", "4:chat", "5:music", "6:graphics"]
 myFont = "-*-terminus-medium-*-*-*-12-120-75-75-*-*-iso8859-*"
 myXmonadBar = "dzen2 -x '0' -y '0' -h '20' -ta 'l' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 1 -fn '" ++ myFont ++ "'"
@@ -74,7 +74,7 @@ dzenBackGround = "#000000"
 dzenUnknownColor = "#babdb6"
 dzenUrgentColor = "#cc0000"
 
-myManageHook = (composeAll . concat $
+myManageHook = composeAll . concat $
     [ [resource     =?  r --> doIgnore             | r <- myIgnore ]
     , [className    =?  c --> doShift "2:web"      | c <- myWebs ]
     , [className    =?  c --> doShift "3:dev"      | c <- myDev ]
@@ -82,17 +82,18 @@ myManageHook = (composeAll . concat $
     , [className    =?  c --> doShift "5:music"    | c <- myMusic ]
     , [className    =?  c --> doShift "6:graphics" | c <- myGraphics ]
     , [isFullscreen --> myDoFullFloat ]
-    ])
+    , [manageDocks ]
+    ]
     where
         role = stringProperty "WM_WINDOW_ROLE"
         name = stringProperty "WM_NAME"
 
         -- Classnames
-        myGraphics = ["gimp", "mypaint"]
-        myMusic = ["clementine"]
-        myChat = ["skype", "pidgin"]
-        myWebs = ["chromium-browser"]
-        myDev = ["gnome-terminal", "gvim", "monodevelop"]
+        myGraphics = ["gimp", "Mypaint"]
+        myMusic = ["Clementine"]
+        myChat = ["Pidgin", "Skype"]
+        myWebs = ["Chromium-browser"]
+        myDev = ["Gnome-terminal", "Gvim", "Monodevelop"]
 
         -- Ignore windows
         myIgnore = ["desktop", "desktop_window", "notify-osd", "trayer"]
@@ -100,13 +101,13 @@ myManageHook = (composeAll . concat $
         myDoFullFloat :: ManageHook
         myDoFullFloat = doF W.focusDown <+> doFullFloat
 
-myLogHook h = dynamicLogWithPP $ defaultPP
+myLogHook h = dynamicLogWithPP $ dzenPP
     {
           ppCurrent = dzenColor dzenFocusColor dzenBackGround . pad
         , ppVisible = dzenColor dzenNonFocusColor dzenBackGround . pad
         , ppHidden = dzenColor dzenForeGround dzenBackGround . pad
         , ppHiddenNoWindows = dzenColor dzenUnknownColor dzenBackGround . pad
-        , ppUrgent = dzenColor dzenUrgentColor dzenBackGround . pad
+        , ppUrgent = dzenColor dzenUrgentColor dzenBackGround . dzenStrip . pad 
         , ppSep = " | "
         , ppLayout = dzenColor dzenFocusColor dzenBackGround .
             (\x -> case x of
@@ -130,8 +131,8 @@ customLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| simpleFloat
         tiled = ResizableTall 1 (2/100) (1/2) []
 
 customLayout2 = avoidStruts $ Full ||| tiled ||| Mirror tiled ||| simpleFloat
-  where
-    tiled   = ResizableTall 1 (2/100) (1/2) []
+    where
+        tiled   = ResizableTall 1 (2/100) (1/2) []
  
 gimpLayout  = avoidStruts $ withIM (0.11) (Role "gimp-toolbox") $
               reflectHoriz $
