@@ -1,4 +1,7 @@
 urxvt*font: xft:Ubuntu Mono:size=10
+urxvt*scrollBar: false
+urxvt*internalborder: 6
+urxvt.urgentOnBell: true
 urxvt*foreground: #f2f2f2
 urxvt*background: #101010
 
