@@ -12,7 +12,7 @@ import System.IO
 import System.Exit
  
 import XMonad.Util.Run
- 
+import XMonad.Util.EZConfig
  
 import XMonad.Actions.CycleWS
  
@@ -36,6 +36,8 @@ import XMonad.Layout.LayoutModifier
 import XMonad.Layout.Grid
  
 import Data.Ratio ((%))
+
+import XMonad.Config.Gnome
  
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
@@ -43,7 +45,7 @@ import qualified Data.Map as M
 main = do
     dzenLeftBar <- spawnPipe myXmonadBar
     dzenRightBar <- spawnPipe myConqyBar
-    xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
+    xmonad $ withUrgencyHook NoUrgencyHook $ gnomeConfig
         { borderWidth = myBorderWidth
         , normalBorderColor = myBorderColor
         , focusedBorderColor = myFocusedBorderColor
@@ -53,6 +55,8 @@ main = do
         , logHook = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
         , workspaces = myWorkspaces
         }
+        `additionalKeys`
+        [ ((mod1Mask, xK_p), spawn "dmenu_run -nb '#3f3f3f' -nf '#dcdccc' -sb '#dcdccc' -sf '#3f3f3f'")]
 
 -- Constants
 myBorderWidth = 2
