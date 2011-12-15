@@ -28,6 +28,8 @@ def create_windows_symlink(item, sym_location, is_dir):
     if (is_dir):
         if (os.path.basename(item) == ".vim"):
             sym_location = os.path.join(home_dir, "vimfiles")
+        elif (os.path.basename(item) == ".vimrc"):
+            sym_location = os.path.join(home_dir, "_vimrc")
         kdll.CreateSymbolicLinkW(sym_location, item, 1)
     else:
         kdll.CreateSymbolicLinkW(sym_location, item, 0)
@@ -45,12 +47,13 @@ def create_needed_folders(path):
     os.makedirs(path, 755)
 
 items_to_link = glob.glob(os.path.join(source_dir, ".*"))
-items_to_link.append(glob.glob(os.path.join(source_dir, ".*")))
 
 for item in items_to_link:
+    print "Item: %s" % (item)
+    os_name = platform.system();
     item_name = os.path.basename(item)
     if item_name not in ignore_items:
-        if item_name in special_items.keys():
+        if item_name in special_items.keys() and os_name != "Windows":
             link_path = special_items[item_name]
             sym_location = os.path.join(home_dir, special_items[item_name])
             create_needed_folders(link_path)
@@ -60,7 +63,7 @@ for item in items_to_link:
         # TODO: Clean an already existing symlink.
         if (os.path.exists(sym_location)):
             os.remove(sym_location)
-        if (platform.system() == "Windows"):
+        if (os_name == "Windows"):
             if os.path.isdir(item):
                 create_windows_symlink(item, sym_location, True)
             else:
