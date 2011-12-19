@@ -5,6 +5,7 @@ call pathogen#helptags()
 
 set encoding=utf8
 set fileencoding=utf8
+set fileformat=unix
 
 set hidden
 
@@ -110,7 +111,7 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumv
 " Set font and colorscheme.
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Droid\ Sans\ Mono\ 9 
+        set guifont=ProggyCleanTT\ 12
     elseif has("gui_win32")
         set guifont=ProggyCleanTT:h12:cANSI
     endif
