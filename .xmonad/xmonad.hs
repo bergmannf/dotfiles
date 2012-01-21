@@ -96,7 +96,7 @@ myManageHook = composeAll . concat $
         myGraphics = ["gimp", "Mypaint"]
         myMusic = ["Clementine"]
         myChat = ["Pidgin", "Skype"]
-        myWebs = ["Chromium-browser"]
+        myWebs = ["Chromium-browser", "Opera"]
         myDev = ["Gnome-terminal", "Gvim", "Monodevelop"]
 
         -- Ignore windows
