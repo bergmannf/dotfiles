@@ -16,11 +16,11 @@ number_of_screens=`xrandr | grep Screen | wc -l`
 
 if [ "$number_of_screens" = "1" ]; then
     echo One screen found
-    conqy_string="conky -c ~/.dzen/.dzen_conky | dzen2 -y '$y_cord' -h '20' -ta 'r' -fg '$dzenForeGround' -bg '$dzenBackGround' -fn '$myFont'"
+    conqy_string="conky -c ~/.dzen/.dzen_conky | dzen2 -y '$y_cord' -h '20' -ta 'r' -fg '$dzenForeGround' -bg '$dzenBackGround' -fn '$myFont' -e 'onnewinput:lower'"
 
 elif [ $number_of_screens eq 2 ]; then
     echo Two screens found
-    conqy_string="conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '$dzenForeGround' -bg '$dzenBackGround' -xs 2 -fn '$myFont'"
+    conqy_string="conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '$dzenForeGround' -bg '$dzenBackGround' -xs 2 -fn '$myFont' -e 'onstart:lower'"
 
 else
     echo Too many screens.
