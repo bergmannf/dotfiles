@@ -3,6 +3,9 @@
 dzenForeGround=$1
 dzenBackGround=$2
 myFont=$3
+
+echo "Foreground: $1, Background: $2, Font: $3"
+
 height=20
 
 screen_size=`xwininfo -metric -root|sed -ne 's/.*geometry.*x\([0-9]*\)+.*/\1/p'`
