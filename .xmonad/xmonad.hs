@@ -44,7 +44,7 @@ import qualified Data.Map as M
 
 main = do
     dzenLeftBar <- spawnPipe myXmonadBar
-    dzenRightBar <- spawnPipe myConqyBar
+    conqyBar <- spawnPipe conqyBarSetup
     xmonad $ withUrgencyHook NoUrgencyHook $ gnomeConfig
         { borderWidth = myBorderWidth
         , normalBorderColor = myBorderColor
@@ -66,8 +66,9 @@ myBitmapDir = "/home/florian/.dzen/icons"
 myTerminal = "urxvt"
 myWorkspaces = ["1:main", "2:web", "3:dev", "4:chat", "5:music", "6:graphics"]
 myFont = "-*-terminus-medium-*-*-*-12-120-75-75-*-*-iso8859-*"
+conqyBarSetup = "~/.xmonad/dzen.sh" ++ dzenForeGround ++ dzenBackGround ++ myFont
 myXmonadBar = "dzen2 -x '0' -y '0' -h '20' -ta 'l' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 1 -fn '" ++ myFont ++ "'"
-myConqyBar = "conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 2 -fn '" ++ myFont ++ "'"
+-- myConqyBar = "conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 2 -fn '" ++ myFont ++ "'"
 
 
 --Colors
