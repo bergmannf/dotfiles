@@ -45,7 +45,8 @@ import qualified Data.Map as M
 main = do
     dzenLeftBar <- spawnPipe myXmonadBar
     dzenRightBar <- spawnPipe myConqyBar
-    xmonad $ withUrgencyHook NoUrgencyHook $ gnomeConfig
+    gnomeSettings <- spawnPipe "gnome-settings-daemon"
+    xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
         { borderWidth = myBorderWidth
         , normalBorderColor = myBorderColor
         , focusedBorderColor = myFocusedBorderColor
