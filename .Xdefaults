@@ -1,4 +1,5 @@
-urxvt*font: xft:Ubuntu Mono:size=10
+! urxvt*font: xft:Bitstream Vera Sans Mono:size=10
+urxvt*font: xft:DeJa Vu Sans Mono:size=10
 urxvt*scrollBar: false
 urxvt*internalborder: 6
 urxvt.urgentOnBell: true
@@ -56,48 +57,371 @@ URxvt.urlLauncher: uzbl-browser
 URxvt.matcher.button: 2
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
-URxvt*colorUL: #c5f779
-URxvt*underlineColor: #c5f779
+!
+! Color Schemes start here:
+!
+! urxvt.background: #000000
+! urxvt.foreground: #ffffff
 
-URxvt*color0:  #3f3f3f
-URxvt*color1:  #705050
-URxvt*color2:  #60b48a
-URxvt*color3:  #dfaf8f
-URxvt*color4:  #506070
-URxvt*color5:  #dc8cc3
-URxvt*color6:  #8cd0d3
-URxvt*color7:  #DCDCCC
+urxvt*foreground: #f2f2f2
+urxvt*background: #101010
 
-URxvt*color8:  #709080
-URxvt*color9:  #cc9393
-URxvt*color10: #7f9f7f
-URxvt*color11: #f0dfaf
-URxvt*color12: #94bff3
-URxvt*color13: #ec93d3
-URxvt*color14: #93e0e3
-URxvt*color15: #ffffff
+! Molokai theme
+thayer*background: #101010
+thayer*foreground: #d0d0d0
+thayer*cursorColor: #8000BA
+thayer*color0: #101010
+thayer*color1: #960050
+thayer*color2: #66aa11
+thayer*color3: #c47f2c
+thayer*color4: #30309b
+thayer*color5: #7e40a5
+#thayer*color6: #3579a8 
+thayer*color6: #89b6e2
+thayer*color7: #9999aa
+thayer*color8: #303030
+thayer*color9: #ff0090
+thayer*color10: #80ff00
+thayer*color11: #ffba68
+thayer*color12: #5f5fee
+thayer*color13: #bb88dd
+thayer*color14: #4eb4fa
+thayer*color15: #d0d0d0
 
-!black
-xterm*color0:         #353535
-xterm*color8:         #666666
-!red
-xterm*color1:         #AE4747
-xterm*color9:         #EE6363
-!green
-xterm*color2:         #556B2F
-xterm*color10:        #9ACD32
-!brown/yellow
-xterm*color3:         #DAA520
-xterm*color11:        #FFC125
-!blue
-xterm*color4:         #6F99B4
-xterm*color12:        #7C96B0
-!magenta
-xterm*color5:         #8B7B8B
-xterm*color13:        #D8BFD8
-!cyan
-xterm*color6:         #A7A15E
-xterm*color14:        #F0E68C
-!white
-xterm*color7:         #DDDDDD
-xterm*color15:        #FFFFFFRxvt*color15: #ffffff
+! Dark scheme from arch
+arch*color0:     rgb:00/00/00
+arch*color1:     rgb:d3/62/65
+arch*color2:     rgb:ae/ce/91
+arch*color3:     rgb:e7/e1/8c
+arch*color4:     rgb:7a/7a/b0
+arch*color5:     rgb:96/3c/59
+arch*color6:     rgb:41/81/79
+arch*color7:     rgb:be/be/be
+arch*color8:     rgb:66/66/66
+arch*color9:     rgb:ef/81/71
+arch*color10:    rgb:e5/f7/79
+arch*color11:    rgb:ff/f7/96
+arch*color12:    rgb:41/86/be
+arch*color13:    rgb:ef/9e/be
+arch*color14:    rgb:71/be/be
+arch*color15:    rgb:ff/ff/ff
+
+! Zenburn
+zenburn*color0:  #1E2320
+zenburn*color1:  #705050
+zenburn*color2:  #60b48a
+zenburn*color3:  #dfaf8f
+zenburn*color4:  #506070
+zenburn*color5:  #dc8cc3
+zenburn*color6:  #8cd0d3
+zenburn*color7:  #dcdccc
+zenburn*color8:  #709080
+zenburn*color9:  #dca3a3
+zenburn*color10: #c3bf9f
+zenburn*color11: #f0dfaf
+zenburn*color12: #94bff3
+zenburn*color13: #ec93d3
+zenburn*color14: #93e0e3
+zenburn*color15: #ffffff
+
+! Thayer (based on monokai)
+thayer*color0: #262729
+thayer*color8: #554444
+thayer*color1: #F92671
+thayer*color9: #F92671
+!thayer*color9: #FF669D
+thayer*color2: #A6E22E
+thayer*color10: #A6E22E
+!thayer*color10: #BEED5F
+thayer*color3: #FD971F
+thayer*color11: #FD971F
+!thayer*color11: #E6DB74
+thayer*color4: #66D9EF
+thayer*color12: #66D9EF
+thayer*color5: #9E6FFE
+thayer*color13: #9E6FFE
+thayer*color6: #5E7175
+thayer*color14: #A3BABF
+!thayer*color7: #CCCCC6
+thayer*color7: #F8F8F2
+thayer*color15: #F8F8F2
+
+! thayer urxvt
+thayer*background:  #222222
+thayer*foreground:  #aaaaaa
+thayer*color0:      #000000
+thayer*color8:      #555753
+thayer*color1:      #ff6565
+thayer*color9:      #ff8d8d
+thayer*color2:      #93d44f
+thayer*color10:     #c8e7a8
+thayer*color3:      #eab93d
+thayer*color11:     #ffc123
+thayer*color4:      #204a87
+thayer*color12:     #3465a4
+thayer*color5:      #ce5c00
+thayer*color13:     #f57900
+thayer*color6:      #89b6e2
+thayer*color14:     #46a4ff
+thayer*color7:      #cccccc
+thayer*color15:     #ffffff
+
+! thayer lightr,
+! https://github.com/thayerwilliams/dotfiles-msi
+lightr*foreground:#555555
+lightr*background:#ffffff
+lightr*color0: #555555
+lightr*color8: #222222
+lightr*color1: #ff005f
+lightr*color9: #ff00af
+lightr*color2: #008700
+lightr*color10: #00af00
+lightr*color3: #ff8700
+lightr*color11: #ffaf00
+lightr*color4: #000087
+lightr*color12: #0000ff
+lightr*color5: #870087
+lightr*color13: #af00d7
+lightr*color6: #0087af
+lightr*color14: #00afd7
+lightr*color7: #afafaf
+lightr*color15: #ffffff
+
+! Tango
+tango*foreground:  #000000
+tango*background:  #ffffff
+tango*color0:      #2E3436
+tango*color1:      #CC0000
+tango*color2:      #4E9A06
+tango*color3:      #C4A000
+tango*color4:      #3465A4
+tango*color5:      #75507B
+tango*color6:      #06989A
+tango*color7:      #D3D7CF
+tango*color8:      #555753
+tango*color9:      #EF2929
+tango*color10:     #8AE234
+tango*color11:     #FCE94F
+tango*color12:     #729FCF
+tango*color13:     #AD7FA8
+tango*color14:     #34E2E2
+tango*color15:     #EEEEEC
+
+! InfiniteRed
+infred*foreground: #f2f2f2
+infred*background: #101010
+infred*color0:    #6c6c6c
+infred*color1:    #e9897c
+infred*color2:    #b6e77d
+infred*color3:    #ecebbe
+infred*color4:    #a9cdeb
+infred*color5:    #ea96eb
+infred*color6:    #c9caec
+infred*color7:    #f2f2f2
+infred*color8:    #747474
+infred*color9:    #f99286
+infred*color10:    #c3f786
+infred*color11:    #fcfbcc
+infred*color12:    #b6defb
+infred*color13:    #fba1fb
+infred*color14:    #d7d9fc
+infred*color15:    #e2e2e2
+
+
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+
+urxvt*color0:    #6c6c6c
+urxvt*color1:    #e9897c
+urxvt*color2:    #b6e77d
+urxvt*color3:    #ecebbe
+urxvt*color4:    #a9cdeb
+urxvt*color5:    #ea96eb
+urxvt*color6:    #c9caec
+urxvt*color7:    #f2f2f2
+
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
+
+urxvt*color8:    #747474
+urxvt*color9:    #f99286
+urxvt*color10:    #c3f786
+urxvt*color11:    #fcfbcc
+urxvt*color12:    #b6defb
+urxvt*color13:    #fba1fb
+urxvt*color14:    #d7d9fc
+urxvt*color15:    #e2e2e2
+! Zenburn
+zenburn*color0:  #1E2320
+zenburn*color1:  #705050
+zenburn*color2:  #60b48a
+zenburn*color3:  #dfaf8f
+zenburn*color4:  #506070
+zenburn*color5:  #dc8cc3
+zenburn*color6:  #8cd0d3
+zenburn*color7:  #dcdccc
+zenburn*color8:  #709080
+zenburn*color9:  #dca3a3
+zenburn*color10: #c3bf9f
+zenburn*color11: #f0dfaf
+zenburn*color12: #94bff3
+zenburn*color13: #ec93d3
+zenburn*color14: #93e0e3
+zenburn*color15: #ffffff
+
+! Thayer (based on monokai)
+thayer*color0: #262729
+thayer*color8: #554444
+thayer*color1: #F92671
+thayer*color9: #F92671
+!thayer*color9: #FF669D
+thayer*color2: #A6E22E
+thayer*color10: #A6E22E
+!thayer*color10: #BEED5F
+thayer*color3: #FD971F
+thayer*color11: #FD971F
+!thayer*color11: #E6DB74
+thayer*color4: #66D9EF
+thayer*color12: #66D9EF
+thayer*color5: #9E6FFE
+thayer*color13: #9E6FFE
+thayer*color6: #5E7175
+thayer*color14: #A3BABF
+!thayer*color7: #CCCCC6
+thayer*color7: #F8F8F2
+thayer*color15: #F8F8F2
+
+! thayer urxvt
+thayer*background:  #222222
+thayer*foreground:  #aaaaaa
+thayer*color0:      #000000
+thayer*color8:      #555753
+thayer*color1:      #ff6565
+thayer*color9:      #ff8d8d
+thayer*color2:      #93d44f
+thayer*color10:     #c8e7a8
+thayer*color3:      #eab93d
+thayer*color11:     #ffc123
+thayer*color4:      #204a87
+thayer*color12:     #3465a4
+thayer*color5:      #ce5c00
+thayer*color13:     #f57900
+thayer*color6:      #89b6e2
+thayer*color14:     #46a4ff
+thayer*color7:      #cccccc
+thayer*color15:     #ffffff
+
+! thayer lightr,
+! https://github.com/thayerwilliams/dotfiles-msi
+lightr*foreground:#555555
+lightr*background:#ffffff
+lightr*color0: #555555
+lightr*color8: #222222
+lightr*color1: #ff005f
+lightr*color9: #ff00af
+lightr*color2: #008700
+lightr*color10: #00af00
+lightr*color3: #ff8700
+lightr*color11: #ffaf00
+lightr*color4: #000087
+lightr*color12: #0000ff
+lightr*color5: #870087
+lightr*color13: #af00d7
+lightr*color6: #0087af
+lightr*color14: #00afd7
+lightr*color7: #afafaf
+lightr*color15: #ffffff
+
+! Tango
+tango*foreground:  #000000
+tango*background:  #ffffff
+tango*color0:      #2E3436
+tango*color1:      #CC0000
+tango*color2:      #4E9A06
+tango*color3:      #C4A000
+tango*color4:      #3465A4
+tango*color5:      #75507B
+tango*color6:      #06989A
+tango*color7:      #D3D7CF
+tango*color8:      #555753
+tango*color9:      #EF2929
+tango*color10:     #8AE234
+tango*color11:     #FCE94F
+tango*color12:     #729FCF
+tango*color13:     #AD7FA8
+tango*color14:     #34E2E2
+tango*color15:     #EEEEEC
+
+! InfiniteRed
+infred*foreground: #f2f2f2
+infred*background: #101010
+infred*color0:    #6c6c6c
+infred*color1:    #e9897c
+infred*color2:    #b6e77d
+infred*color3:    #ecebbe
+infred*color4:    #a9cdeb
+infred*color5:    #ea96eb
+infred*color6:    #c9caec
+infred*color7:    #f2f2f2
+infred*color8:    #747474
+infred*color9:    #f99286
+infred*color10:    #c3f786
+infred*color11:    #fcfbcc
+infred*color12:    #b6defb
+infred*color13:    #fba1fb
+infred*color14:    #d7d9fc
+infred*color15:    #e2e2e2
+
+
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+
+urxvt*color0:    #6c6c6c
+urxvt*color1:    #e9897c
+urxvt*color2:    #b6e77d
+urxvt*color3:    #ecebbe
+urxvt*color4:    #a9cdeb
+urxvt*color5:    #ea96eb
+urxvt*color6:    #c9caec
+urxvt*color7:    #f2f2f2
+
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
+
+urxvt*color8:    #747474
+urxvt*color9:    #f99286
+urxvt*color10:    #c3f786
+urxvt*color11:    #fcfbcc
+urxvt*color12:    #b6defb
+urxvt*color13:    #fba1fb
+urxvt*color14:    #d7d9fc
+urxvt*color15:    #e2e2e2
+>>>>>>> ef6af1dfe321254f3822503c5db6640b21a85e84

@@ -44,9 +44,9 @@ import qualified Data.Map as M
 
 main = do
     dzenLeftBar <- spawnPipe myXmonadBar
-    dzenRightBar <- spawnPipe myConqyBar
-    gnomeSettings <- spawnPipe "gnome-settings-daemon"
-    xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
+    conqyBar <- spawnPipe conqyBarSetup
+    trayer <- spawnPipe trayer
+    xmonad $ withUrgencyHook NoUrgencyHook $ gnomeConfig
         { borderWidth = myBorderWidth
         , normalBorderColor = myBorderColor
         , focusedBorderColor = myFocusedBorderColor
@@ -67,8 +67,10 @@ myBitmapDir = "/home/florian/.dzen/icons"
 myTerminal = "urxvt"
 myWorkspaces = ["1:main", "2:web", "3:dev", "4:chat", "5:music", "6:graphics"]
 myFont = "-*-terminus-medium-*-*-*-12-120-75-75-*-*-iso8859-*"
+conqyBarSetup = "/home/florian/.xmonad/dzen.sh '" ++ dzenForeGround ++ "' '" ++ dzenBackGround ++ "' '" ++ myFont ++ "'"
 myXmonadBar = "dzen2 -x '0' -y '0' -h '20' -ta 'l' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 1 -fn '" ++ myFont ++ "'"
-myConqyBar = "conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 2 -fn '" ++ myFont ++ "'"
+trayer = "trayer --height 20 --widthtype request --edge bottom --expand true --align left --transparent true --alpha 0 --tint 0x000000"
+-- myConqyBar = "conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 2 -fn '" ++ myFont ++ "'"
 
 
 --Colors
@@ -97,7 +99,7 @@ myManageHook = composeAll . concat $
         myGraphics = ["gimp", "Mypaint"]
         myMusic = ["Clementine"]
         myChat = ["Pidgin", "Skype"]
-        myWebs = ["Chromium-browser"]
+        myWebs = ["Chromium-browser", "Opera"]
         myDev = ["Gnome-terminal", "Gvim", "Monodevelop"]
 
         -- Ignore windows
