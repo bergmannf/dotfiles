@@ -1,5 +1,5 @@
 ! urxvt*font: xft:Bitstream Vera Sans Mono:size=10
-urxvt*font: xft:DeJa Vu Sans Mono:size=10
+urxvt*font: xft:Ubuntu Mono:size=10
 urxvt*scrollBar: false
 urxvt*internalborder: 6
 urxvt.urgentOnBell: true
@@ -52,7 +52,13 @@ URxvt*background: #3f3f3f
 
 URxvt.saveLines:32767
 
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-lib: ~/dotfiles/urxvt-perls/
+URxvt.perl-ext-common: default,matcher,keyboard-select,clipboard
+URxvt.keysym.M-Escape: perl:keyboard-select:search
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.urlLauncher: uzbl-browser
 URxvt.matcher.button: 2
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]

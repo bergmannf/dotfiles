@@ -37,39 +37,41 @@ import XMonad.Layout.Grid
  
 import Data.Ratio ((%))
 
-import XMonad.Config.Gnome
+import XMonad.Config.Xfce
  
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 
 main = do
-    dzenLeftBar <- spawnPipe myXmonadBar
-    conqyBar <- spawnPipe conqyBarSetup
-    trayer <- spawnPipe trayer
-    xmonad $ withUrgencyHook NoUrgencyHook $ gnomeConfig
+    xmonad $ withUrgencyHook NoUrgencyHook $ xfceConfig
         { borderWidth = myBorderWidth
         , normalBorderColor = myBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , terminal = myTerminal
         , manageHook = myManageHook <+> manageHook defaultConfig
+        , modMask = mod4Mask
         , layoutHook = avoidStruts $ myLayoutHook
-        , logHook = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+       -- , logHook = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+        , logHook = ewmhDesktopsLogHook
+        , startupHook = ewmhDesktopsStartup
         , workspaces = myWorkspaces
         }
         `additionalKeys`
-        [ ((mod1Mask, xK_p), spawn "dmenu_run -nb '#3f3f3f' -nf '#dcdccc' -sb '#dcdccc' -sf '#3f3f3f'")]
+        [ ((mod1Mask, xK_p), spawn "dmenu_run -nb '#3f3f3f' -nf '#dcdccc' -sb '#dcdccc' -sf '#3f3f3f'")
+        , ((mod1Mask, xK_q), spawn "killall conky dzen2 trayer redshift && xmonad --recompile && xmonad --restart") 
+        , ((mod1Mask .|. shiftMask, xK_q), spawn "xfce4-session-logout")]
 
 -- Constants
 myBorderWidth = 2
 myBorderColor = "#e9b96e"
 myFocusedBorderColor = "#f57900"
 myBitmapDir = "/home/florian/.dzen/icons"
-myTerminal = "urxvt"
+myTerminal = "xfce4-terminal"
 myWorkspaces = ["1:main", "2:web", "3:dev", "4:chat", "5:music", "6:graphics"]
 myFont = "-*-terminus-medium-*-*-*-12-120-75-75-*-*-iso8859-*"
 conqyBarSetup = "/home/florian/.xmonad/dzen.sh '" ++ dzenForeGround ++ "' '" ++ dzenBackGround ++ "' '" ++ myFont ++ "'"
 myXmonadBar = "dzen2 -x '0' -y '0' -h '20' -ta 'l' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 1 -fn '" ++ myFont ++ "'"
-trayer = "trayer --height 20 --widthtype request --edge bottom --expand true --align left --transparent true --alpha 0 --tint 0x000000"
+myAutostarts = "/home/florian/.xmonad/autostarts.sh"
 -- myConqyBar = "conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 2 -fn '" ++ myFont ++ "'"
 
 
