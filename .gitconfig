@@ -1,9 +1,3 @@
-[giggle]
-	main-window-maximized = true
-	main-window-geometry = 436x213+656+24
-	main-window-view = HistoryView
-	history-view-vpane-position = 655
-	file-view-vpane-position = 886
 [user]
 	name = Florian Bergmann
 	email = Bergmann.F@gmail.com

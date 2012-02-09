@@ -43,7 +43,7 @@ map <c-h> <c-w>h
 "* Other Remappings *
 "********************
 let mapleader="," "remapping the mapleader from \ to ,
-nnoremap j gj
+nmap j gj
 nnoremap k gk
 map <leader>g :GundoToggle<CR>
 map <leader>td <Plug>TaskList
@@ -111,7 +111,7 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumv
 " Set font and colorscheme.
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Ubuntu\ Mono\ 10
+        set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
     elseif has("gui_win32")
         set guifont=ProggyCleanTT:h12:cANSI
     endif
