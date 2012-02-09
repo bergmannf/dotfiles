@@ -145,3 +145,6 @@
 [submodule "urxvt-perls"]
 	path = urxvt-perls
 	url = http://github.com/muennich/urxvt-perls.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
