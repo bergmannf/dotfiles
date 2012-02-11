@@ -142,6 +142,3 @@
 [submodule ".vim/bundle/vim-tomorrow"]
 	path = .vim/bundle/vim-tomorrow
 	url = https://github.com/ChrisKempson/Vim-Tomorrow-Theme.git
-[submodule "urxvt-perls"]
-	path = urxvt-perls
-	url = http://github.com/muennich/urxvt-perls.git
