@@ -141,7 +141,10 @@
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/vim-tomorrow"]
 	path = .vim/bundle/vim-tomorrow
-	url = https://github.com/ChrisKempson/Vim-Tomorrow-Theme.git
+	url = https://github.com/chriskempson/Vim-Tomorrow-Theme.git
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/ipython-vim"]
+	path = .vim/bundle/ipython-vim
+	url = https://github.com/ivanov/vim-ipython.git

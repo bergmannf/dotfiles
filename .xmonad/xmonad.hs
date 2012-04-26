@@ -90,7 +90,7 @@ myManageHook = composeAll . concat $
     , [className    =?  c --> doShift "4:chat"     | c <- myChat ]
     , [className    =?  c --> doShift "5:music"    | c <- myMusic ]
     , [className    =?  c --> doShift "6:graphics" | c <- myGraphics ]
-    , [isFullscreen --> myDoFullFloat ]
+    , [isFullscreen --> doFullFloat ]
     , [manageDocks ]
     ]
     where

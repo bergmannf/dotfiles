@@ -48,8 +48,8 @@ nnoremap k gk
 map <leader>g :GundoToggle<CR>
 map <leader>td <Plug>TaskList
 map <leader>pt <Plug>MakeGreen
-let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_max_height = 20
+imap jk <esc>
 
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -60,7 +60,7 @@ map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 " Rope AutoComplete
 let ropevim_vim_completion = 1
 let ropevim_extended_complete = 1
-let g:ropevim_autoimport_modules = ["os.*","traceback","django.*", "xml.etree"]
+let g:ropevim_autoimport_modules = ["os.*","traceback","django.*", "xml.etree", "PyQt4.*"]
 imap <c-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 
@@ -90,9 +90,9 @@ set colorcolumn=85
 " Run :filetype (without args) to see what you may have
 " to turn on yourself, or just set them all to be sure.
 syntax on
-filetype on
-filetype plugin on
-filetype indent on
+"filetype on
+"filetype plugin on
+"filetype indent on
 
 set ofu=syntaxcomplete#Complete
 
@@ -111,12 +111,18 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumv
 " Set font and colorscheme.
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
+        set guifont=Envy\ Code\ R\ 10
     elseif has("gui_win32")
         set guifont=ProggyCleanTT:h12:cANSI
     endif
     colors wombat
+else
+    set t_Co=256
+    colors wombat256
 endif
+
+set cursorline
+set cursorcolumn
 
 " Hide Toolbar
 set guioptions-=T
@@ -126,6 +132,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_enable_signs=1
+
+let g:Powerline_symbols='fancy'
 
 " Omnicompletion settings
 autocmd FileType python set omnifunc=pythoncomplete#Complete
