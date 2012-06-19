@@ -139,8 +139,8 @@
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/vim-tomorrow"]
-	path = .vim/bundle/vim-tomorrow
+[submodule ".vim/bundle/vim-tomorrow-theme"]
+	path = .vim/bundle/vim-tomorrow-theme
 	url = https://github.com/chriskempson/Vim-Tomorrow-Theme.git
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
