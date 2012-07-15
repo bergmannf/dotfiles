@@ -1,0 +1,29 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/florian/Code/" . "OposParser/")
+ ("/home/florian/" . "Code/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/florian/Code/OposParser/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "."
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/florian/Code/OposParser/" (20475 11573 145229 0) "OposUi/" "OposTests/" "OposStarter/" "OposParser.userprefs" "OposParser.suo" "OposParser.sln" "OposParser/" "lib/" "._.DS_Store" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/home/florian/Code/" (20473 56864 85461 0) "Subversion/" "stanford/" "qt/" "python_rtm_client/" "python_koans/" "pyside/" "pygame/" "pydoro/" "pragmatic_programmer/" "OposParser/" "msc_projects/" "ml-class/" "meld/" "LCthw/" "Job_Application/" "html_games/" "Git/" "fonts/" "CodeSnippets/" "CleverAlgorithms/" "Blog/" ".metadata/" ".directory" "../" "./")
+
+ ("/home/florian/" (20483 297 410501 598000) ".vimrc" "hammerfight/" ".gksu.lock" ".goutputstream-HBRUGW" ".subversion_IDEA/" ".gtkrc-2.0-kde4" ".goutputstream-HM9RFW" ".profile" ".gitmodules" ".zsh-update" "conky" ".goutputstream-NIE5CW" ".Xresources" "Videos/" ".gimp-2.6/" ".local/" ".ctrlp_cache/" ".emacs~" ".goutputstream-AUNQFW" ".dropbox/" ".goutputstream-KIYWEW" ".xmonad/" ".gconf/" ".goutputstream-GY7PFW" ".i3status.conf" ".i3/" ".goutputstream-ICUOGW" "dotfiles/" ".goutputstream-324CHW" ".goutputstream-X1ONDW" ".fonts.conf" ".goutputstream-5R2QDW" ".saves/" ".synaptic/" ".IdeaIC11/" ".goutputstream-DEWJFW" ".goutputstream-1SEDGW" ".mozilla/" ".goutputstream-YCZGDW" ".VirtualBox/" ".recentf" ".goutputstream-GAG9CW" ".pulse/" ".dbus/" ".config/" ".goutputstream-UNGNDW" ".gtk-bookmarks" ".goutputstream-PWMDGW" ".oh-my-zsh/" ".macromedia/" "Diablo III/" "Templates/" ".xsession-errors.old" ".fontconfig/" ".subversion/" ".recently-used" ".virtualenvs/" ".goutputstream-54XPGW" ".gegl-0.0/" ".goutputstream-5F7UFW" ".zsh_history" "Documents/" ".xscreensaver" ".goutputstream-COLTFW" "Ubuntu One/" ".gvfs/" ".goutputstream-LN8EGW" ".emacs" ".goutputstream-BRGWGW" ".gstreamer-0.10/" ".goutputstream-UFBBDW" ".goutputstream-GKW3CW" ".designer/" ".xsession-errors" ".pip/" ".hgrc" "Calibre Library/" ".dzen/" ".goutputstream-DYGJGW" "examples.desktop" ".goutputstream-WCDTGW" ".kde/" ".goutputstream-A8ZKDW" ".icons/" ".goutputstream-9QOJGW" "tutorial" ".#test.py" "Public/" ".bazaar/" ".directory" ".gnome/" ".PyCharm20/" ".ssh/" "Desktop/" ".goutputstream-R83FFW" ".gitconfig" ".Xauthority" ".Skype/" "diablo_three.sh" ".goutputstream-BXG8EW" ".goutputstream-WS79FW" ".goutputstream-QW52FW" ".shotwell/" ".tmux.conf" ".Xdefaults" ".lastpass/" ".goutputstream-Q886DW" ".pulse-cookie" ".bash_history" ".zshrc" ".goutputstream-3A4PFW" ".PlayOnLinux/" ".compiz/" ".calibre_calibre GUI.lock" ".goutputstream-P7V1CW" ".goutputstream-BN9UDW" ".goutputstream-LLM8CW" ".goutputstream-QL97FW" ".gnome2/" ".emacs.d/" ".dropbox-dist/" "Code/" ".goutputstream-52G1DW" ".pip_download_cache/" ".compiz-1/" ".ICEauthority" "Downloads/" ".goutputstream-M9J2EW" ".goutputstream-9PV9FW" ".thumbnails/" ".purple/" ".gitignore" "Music/" ".lesshst" ".pki/" ".goutputstream-K2Y3DW" ".goutputstream-NUY3GW" ".gnupg/" ".goutputstream-VQ5SGW" "IdeaProjects/" ".goutputstream-BHVUFW" ".zcompdump" ".fonts/" ".jCodeCollector/" ".vim/" ".aptitude/" ".irssi/" ".adobe/" ".viminfo" "VirtualBox VMs/" ".goutputstream-HQYEFW" ".goutputstream-Q62PGW" ".rpdb2_settings/" ".bash_logout" ".ghc/" ".gkrellm2/" ".git-completion.bash" ".goutputstream-8DHVFW" ".dmenu_cache" "Applications/" ".bashrc" ".goutputstream-D0W5GW" "Pictures/" "Compilers/" ".mypaint/" ".#test.rst" ".goutputstream-HXONGW" ".eclipse/" ".cache/" ".goutputstream-0PW2EW" ".gnome2_private/" ".kderc" ".winpdb_settings.cfg" ".swt/" ".themes/" ".Xmodmap" ".dmrc" ".mission-control/" ".bzr.log" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -2,3 +2,7 @@
 .xmonad/xmonad.errors
 .xmonad/xmonad.hi
 .xmonad/xmonad.o
+.emacs.d/el-get/*
+.emacs.d/semanticdb
+.emacs.d/auto-save-list
+.emacs.d/eshell

@@ -148,3 +148,9 @@
 [submodule ".vim/bundle/ipython-vim"]
 	path = .vim/bundle/ipython-vim
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule ".vim/bundle/elrodeo"]
+	path = .vim/bundle/elrodeo
+	url = https://github.com/chmllr/vim-colorscheme-elrodeo.git
+[submodule ".vim/bundle/vim-ipython"]
+	path = .vim/bundle/vim-ipython
+	url = https://github.com/ivanov/vim-ipython.git

@@ -1,0 +1,51 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/florian/" . "Documents/")
+ ("/home/" . "florian/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/florian/"
+ "/home/florian/Documents/"
+ "/home/florian/.xmonad/"
+ "/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ ".emacs"
+ "music.org"
+ "xmonad.hs"
+ "#test.hs#"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/florian/" (20481 34867 598633 68000) ".vimrc" "hammerfight/" ".gksu.lock" ".goutputstream-HBRUGW" ".subversion_IDEA/" ".gtkrc-2.0-kde4" ".goutputstream-HM9RFW" ".profile" ".gitmodules" ".zsh-update" "conky" ".goutputstream-NIE5CW" ".Xresources" "Videos/" ".gimp-2.6/" ".local/" "####test.py####" ".ctrlp_cache/" ".emacs~" ".goutputstream-AUNQFW" ".dropbox/" ".goutputstream-KIYWEW" ".xmonad/" ".gconf/" ".goutputstream-GY7PFW" ".i3status.conf" ".i3/" ".goutputstream-ICUOGW" "dotfiles/" ".goutputstream-324CHW" ".goutputstream-X1ONDW" ".fonts.conf" ".goutputstream-5R2QDW" ".synaptic/" ".IdeaIC11/" ".goutputstream-DEWJFW" ".goutputstream-1SEDGW" ".mozilla/" ".goutputstream-YCZGDW" "#test.js#" ".VirtualBox/" ".##test.hs#" ".goutputstream-GAG9CW" ".pulse/" ".dbus/" ".config/" ".goutputstream-UNGNDW" ".gtk-bookmarks" ".goutputstream-PWMDGW" ".oh-my-zsh/" ".macromedia/" "Diablo III/" "##test.hs##" "Templates/" ".xsession-errors.old" ".fontconfig/" ".subversion/" ".recently-used" ".virtualenvs/" ".goutputstream-54XPGW" ".gegl-0.0/" ".goutputstream-5F7UFW" ".zsh_history" "Documents/" ".xscreensaver" ".goutputstream-COLTFW" "Ubuntu One/" ".gvfs/" ".goutputstream-LN8EGW" ".emacs" ".goutputstream-BRGWGW" "tutorial~" ".gstreamer-0.10/" ".goutputstream-UFBBDW" ".goutputstream-GKW3CW" ".designer/" ".xsession-errors" ".pip/" ".hgrc" "Calibre Library/" ".dzen/" ".goutputstream-DYGJGW" "examples.desktop" ".goutputstream-WCDTGW" ".kde/" ".goutputstream-A8ZKDW" ".icons/" "#test.rst#" ".goutputstream-9QOJGW" "tutorial" ".#test.py" "Public/" ".bazaar/" ".directory" "##test.py##" ".gnome/" ".PyCharm20/" ".ssh/" "Desktop/" ".goutputstream-R83FFW" ".gitconfig" ".Xauthority" ".Skype/" "diablo_three.sh" ".goutputstream-BXG8EW" "#test.py#" ".goutputstream-WS79FW" ".goutputstream-QW52FW" ".shotwell/" ".tmux.conf" ".Xdefaults" "#test.hs#" ".lastpass/" ".goutputstream-Q886DW" ".pulse-cookie" ".bash_history" ".zshrc" ".goutputstream-3A4PFW" ".PlayOnLinux/" ".compiz/" ".calibre_calibre GUI.lock" ".goutputstream-P7V1CW" ".goutputstream-BN9UDW" ".goutputstream-LLM8CW" ".goutputstream-QL97FW" ".gnome2/" ".emacs.d/" ".dropbox-dist/" "Code/" ".goutputstream-52G1DW" ".pip_download_cache/" ".compiz-1/" ".ICEauthority" "Downloads/" ".goutputstream-M9J2EW" ".goutputstream-9PV9FW" ".thumbnails/" ".purple/" ".gitignore" "Music/" "#test.py#~" ".lesshst" ".pki/" ".goutputstream-K2Y3DW" ".goutputstream-NUY3GW" ".gnupg/" ".goutputstream-VQ5SGW" "###test.py###" "IdeaProjects/" ".goutputstream-BHVUFW" ".zcompdump" ".fonts/" ".jCodeCollector/" ".vim/" ".aptitude/" ".irssi/" ".adobe/" ".viminfo" "VirtualBox VMs/" ".goutputstream-HQYEFW" ".goutputstream-Q62PGW" ".rpdb2_settings/" ".bash_logout" ".ghc/" ".gkrellm2/" ".git-completion.bash" ".goutputstream-8DHVFW" ".dmenu_cache" "Applications/" ".bashrc" ".goutputstream-D0W5GW" "Pictures/" "Compilers/" ".mypaint/" "#text.txt#" ".#test.rst" ".goutputstream-HXONGW" ".eclipse/" ".cache/" ".goutputstream-0PW2EW" ".gnome2_private/" ".kderc" ".winpdb_settings.cfg" ".swt/" ".themes/" ".Xmodmap" ".dmrc" ".mission-control/" ".bzr.log" "../" "./")
+
+ ("/home/florian/Documents/" (20481 34998 430628 973000) "#pomodoro.sh#" ".#pomodoro.sh" "music.org~" "../" "./" "reset_fonts_ubuntu" "conflict_git/" "music.org")
+
+ ("/home/florian/dotfiles/" (20464 7741 86291 157000) ".vimrc" ".gitmodules" "README" ".xmonad/" "hg-prompt/" ".oh-my-zsh/" "../" "symlinking.py" "./" ".hgrc" ".dzen/" "initialize_bundles.sh" ".directory" ".gitconfig" ".tmux.conf" ".Xdefaults" ".zshrc" ".gitignore" ".vim/" ".irssi/" ".git/" ".git-completion.bash" "oh-my-zsh/" ".Xmodmap")
+
+ ("/home/florian/dotfiles/.xmonad/" (20481 34832 150634 174000) "xmonad.errors" "../" "xmonad.hi" "./" "xmonad.o" "dzen.sh" "xmonad-x86_64-linux" "xmonad.hs")
+
+ ("/home/florian/.xmonad/" (20477 60315 373474 600000) "xmonad.errors" "../" "xmonad.hi" "./" "xmonad.o" "dzen.sh" "xmonad-x86_64-linux" "xmonad.hs")
+
+ ("/home/florian/.emacs.d/" (20481 34283 586651 354000) "ac-comphist.dat" "../" "./" "el-get/" "auto-save-list/" "eshell/")
+
+ ("/home/florian/.emacs.d/el-get/" (20481 34767 302636 210000) "auto-complete/" "../" "popup/" "zencoding-mode/" "./" ".status.el" "yasnippet/" ".loaddefs.el~" "haskell-mode/" "el-get/" ".status.el~" ".loaddefs.el")
+
+ ("/home/florian/.emacs.d/el-get/haskell-mode/" (20481 34767 94636 213000) "haskell-cabal.elc" "haskell-align-imports.el" "haskell-sort-imports.elc" "haskell-indent.el" "fontlock.hs" "Makefile" "ghc-core.el" "haskell-hugs.elc" "haskell-checkers.el" "haskell-indentation.el" "haskell-hugs.el" "../" "haskell-site-file.el" "haskell-indentation.elc" "haskell-move-nested.elc" "haskell-checkers.elc" "./" "haskell-mode.elc" "haskell-ghci.el" "haskell-mode.el" "haskell-package.elc" "haskell-doc.el" "haskell-cabal.el" "haskell-navigate-imports.el" "haskell-ghci.elc" "NEWS" "README.md" "haskell-move-nested.el" ".gitignore" "haskell-sort-imports.el" "haskell-indent.elc" "haskell-c.el" ".git/" "indent.hs" "haskell-simple-indent.el" "haskell-align-imports.elc" "haskell-decl-scan.el" "haskell-navigate-imports.elc" "haskell-package.el" "haskell-site-file.elc" "haskell-simple-indent.elc" "haskell-font-lock.el" "inf-haskell.el")
+
+ ("/home/" (20464 31223 829555 921000) "../" "./" ".directory" "florian/")
+
+ ("/home/florian/Code/CodeSnippets/" (20473 56907 537044 0) "mainwindow.ui" "mainwindow.h" "mainwindow.cpp" "main.cpp" "CodeSnippets.pro.user" "CodeSnippets.pro" ".git/" "../" "./")
+
+ ("/home/florian/Code/" (20473 56864 85461 0) "Subversion/" "stanford/" "qt/" "python_rtm_client/" "python_koans/" "pyside/" "pygame/" "pydoro/" "pragmatic_programmer/" "OposParser/" "msc_projects/" "ml-class/" "meld/" "LCthw/" "Job_Application/" "html_games/" "Git/" "fonts/" "CodeSnippets/" "CleverAlgorithms/" "Blog/" ".metadata/" ".directory" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

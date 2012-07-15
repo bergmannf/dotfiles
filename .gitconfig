@@ -5,3 +5,11 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [http]
 	sslVerify = false
+[difftool "ediff"]
+cmd = emacs --eval \"(ediff-files \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
+[difftool "ediffclient"]
+cmd = emacsclient --eval \"(ediff-files \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
+[merge]
+    tool = mymeld
+[mergetool "mymeld"]
+    cmd = ~/git-meld.sh $BASE $LOCAL $REMOTE $MERGED

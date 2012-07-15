@@ -63,7 +63,6 @@ let ropevim_extended_complete = 1
 let g:ropevim_autoimport_modules = ["os.*","traceback","django.*", "xml.etree", "PyQt4.*"]
 imap <c-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
-
 "*******************
 "* Random Settings *
 "*******************
@@ -111,7 +110,8 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumv
 " Set font and colorscheme.
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Envy\ Code\ R\ 10
+        set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
+
     elseif has("gui_win32")
         set guifont=ProggyCleanTT:h12:cANSI
     endif

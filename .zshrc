@@ -25,9 +25,9 @@ alias tmux="TERM=screen-256color-bce tmux"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.venvburrito/startup.sh
 
-bindkey -v
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Customize to your needs...
-export PATH=~/.venvburrito/bin:~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
+export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH

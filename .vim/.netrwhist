@@ -1,5 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/florian/.xmonad'
-let g:netrw_dirhist_2='/home/florian/.config/sakura'
-let g:netrw_dirhist_3='/home/florian/.config/gnome-panel/launchers'
+let g:netrw_dirhist_cnt =0
