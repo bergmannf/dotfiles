@@ -154,3 +154,6 @@
 [submodule ".vim/bundle/vim-ipython"]
 	path = .vim/bundle/vim-ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule ".emacs.d/emacs-for-python"]
+	path = .emacs.d/emacs-for-python
+	url = https://github.com/gabrielelanaro/emacs-for-python.git
