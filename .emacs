@@ -4,17 +4,24 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (deeper-blue)))
- '(ede-project-directories (quote ("/home/florian/Code/pydoro"))))
+ '(ede-project-directories (quote ("/home/florian/Code/OposParser")))
+ '(global-auto-revert-mode t)
+ '(inferior-lisp-program "clisp")
+ '(org-agenda-files (quote ("~/Documents/books.org")))
+ '(send-mail-function (quote mailclient-send-it))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ (when (display-graphic-p) '(default ((t (:family "Envy Code R" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))))
 
 ;; Obtain el-get package management.
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get") 
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t) 
   (url-retrieve
    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
@@ -26,15 +33,15 @@
 ;; Setup packages to fetch via el-get
 (setq
  my:el-get-packages
- '(el-get
-   auto-complete
-   zencoding-mode
-   yasnippet
-   haskell-mode
+ '(auto-complete
    evil
+   haskell-mode
+   helm
+   magit
    nxhtml
-   anything
-   magit))
+   yasnippet
+   zencoding-mode
+   el-get))
 
 (setq my:el-get-packages
       (append
@@ -53,8 +60,41 @@
 (package-initialize)
 
 ;; Set-up packages downloaded via el-get
+(require 'auto-complete-config)
+(ac-config-default)
 (require 'yasnippet)
 (yas/global-mode 1)
+;; Always turn on evil mode
+(evil-mode 1)
+
+;; Add projectile and set up keyboard shortcuts.
+(add-to-list 'load-path "~/.emacs.d/site-packages")
+(require 'projectile)
+(projectile-global-mode)
+(setq projectile-enable-caching t)
+
+(require 'helm-projectile)
+(global-set-key (kbd "C-c h") 'helm-projectile)
+
+; make "kj" behave as ESC key ,adapted from http://permalink.gmane.org/gmane.emacs.vim-emulation/
+; you can easily change it to map "jj" or "kk" or "jk" to ESC)
+(define-key evil-insert-state-map "j" #'cofi/maybe-exit)
+
+(evil-define-command cofi/maybe-exit ()
+  :repeat change
+  (interactive)
+  (let ((modified (buffer-modified-p)))
+    (insert "j")
+    (let ((evt (read-event (format "Insert %c to exit insert state" ?k)
+			   nil 0.5)))
+      (cond
+       ((null evt) (message ""))
+       ((and (integerp evt) (char-equal evt ?k))
+	(delete-char -1)
+	(set-buffer-modified-p modified)
+	(push 'escape unread-command-events))
+       (t (setq unread-command-events (append unread-command-events
+					      (list evt))))))))
 
 (line-number-mode 1)	;; Set linenumbers to on
 (column-number-mode 1)	;; Column number in mode-line
@@ -80,8 +120,7 @@
 ;; when you do that, to kill emacs either close its frame from the window
 ;; manager or do M-x kill-emacs.  Don't need a nice shortcut for a once a
 ;; week (or day) action.
-(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-x C-c") 'ido-switch-buffer)
+(global-set-key (kbd "C-x C-b") 'list-buffers)
 (global-set-key (kbd "C-x B") 'ibuffer)
 
 ;; C-x C-j opens dired with the cursor right on the file you're editing
@@ -94,4 +133,28 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; Setting up python-for-emacs
-(load-file ".emacs.d/emacs-for-python/epy-init.el")
+;; (load-file ".emacs.d/emacs-for-python/epy-init.el")
+
+;; Visual cues for parentheses:
+(setq show-paren-delay 0)
+(show-paren-mode t)
+(setq show-paren-style 'parenthesis) ;; alternative would be 'expression
+
+;; Make diff easier to use in tiling window managers
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;; Load changes from disk
+(global-auto-revert-mode 1)
+
+;; Set chromium-browser as default browser
+(setq gnus-button-url 'browse-url-generic
+      browse-url-generic-program "chromium-browser"
+      browse-url-browser-function gnus-button-url)
+
+;; Setup whitespace mode to highlight trailing after the 80 character column.
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
+
+;; Do not use tabs for indention
+(setq-default indent-tabs-mode nil)
