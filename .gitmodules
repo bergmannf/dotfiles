@@ -157,3 +157,9 @@
 [submodule ".emacs.d/emacs-for-python"]
 	path = .emacs.d/emacs-for-python
 	url = https://github.com/gabrielelanaro/emacs-for-python.git
+[submodule ".emacs.d/site-packages/projectile"]
+	path = .emacs.d/site-packages/projectile
+	url = https://github.com/bbatsov/projectile.git
+[submodule ".emacs.d/site-packages/emacs-for-python"]
+	path = .emacs.d/site-packages/emacs-for-python
+	url = https://github.com/gabrielelanaro/emacs-for-python.git

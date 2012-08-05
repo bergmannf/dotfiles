@@ -23,7 +23,7 @@
 
 ;; Obtain el-get package management.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil t) 
+(unless (require 'el-get nil t)
   (url-retrieve
    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
    (lambda (s)
@@ -56,7 +56,7 @@
 (el-get 'sync my:el-get-packages)`
 
 (require 'package)
-(add-to-list 'package-archives 
+(add-to-list 'package-archives
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
 (package-initialize)
@@ -73,7 +73,7 @@
 (evil-mode 1)
 
 ;; Add projectile and set up keyboard shortcuts.
-(add-to-list 'load-path "~/.emacs.d/site-packages")
+(add-to-list 'load-path "~/.emacs.d/site-packages/projectile/")
 (require 'projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching t)
