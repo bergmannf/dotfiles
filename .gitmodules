@@ -163,3 +163,6 @@
 [submodule ".emacs.d/site-packages/emacs-for-python"]
 	path = .emacs.d/site-packages/emacs-for-python
 	url = https://github.com/gabrielelanaro/emacs-for-python.git
+[submodule ".vim/bundle/python-mode"]
+	path = .vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git

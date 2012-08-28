@@ -43,7 +43,11 @@
    yasnippet
    zencoding-mode
    el-get
-   csharp-mode))
+   virtualenv
+   pymacs
+   rope
+   ropemode
+   ropemacs))
 
 (setq my:el-get-packages
       (append
@@ -61,14 +65,16 @@
       "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+(require 'yasnippet)
+(yas/global-mode 1)
+
 ;; Set-up packages downloaded via el-get
 (require 'auto-complete-config)
 (ac-config-default)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(define-key ac-mode-map (kbd "<C-tab>") 'auto-complete)
 (ac-set-trigger-key "TAB")
 (setq ac-auto-start t)
-(require 'yasnippet)
-(yas/global-mode 1)
+
 ;; Always turn on evil mode
 (evil-mode 1)
 
@@ -137,9 +143,6 @@
 ;; Make <ret> always indent on newline
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-;; Setting up python-for-emacs
-;; (load-file ".emacs.d/emacs-for-python/epy-init.el")
-
 ;; Visual cues for parentheses:
 (setq show-paren-delay 0)
 (show-paren-mode t)
@@ -163,3 +166,12 @@
 
 ;; Do not use tabs for indention
 (setq-default indent-tabs-mode nil)
+
+;; Write backups to ~/.emacs.d/backup/
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+      backup-by-copying      t  ; Don't de-link hard links
+      version-control        t  ; Use version numbers on backups
+      delete-old-versions    t  ; Automatically delete excess backups:
+      kept-new-versions      20 ; how many of the newest versions to keep
+      kept-old-versions      5) ; and how many of the old
+(put 'dired-find-alternate-file 'disabled nil)
