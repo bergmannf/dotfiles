@@ -127,8 +127,18 @@ function _git_prompt() {
         echo -n '\[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\] '
     fi
 }
+
+# Print the name of the currently active virtual env.
+function virtual_env() {
+    local venv=$VIRTUAL_ENV
+    if [ -n "$venv" ]; then
+        name=`basename $venv`
+        echo -n "\[\e[0;31m\]($name)\[\033[0m\]"
+    fi
+}
+
 function _prompt_command() {
-    PS1="`_git_prompt`"'[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\w\[\033[0m\]]$ '
+    PS1="`_git_prompt``virtual_env`"'[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\w\[\033[0m\]]$ '
 }
 
 PROMPT_COMMAND=_prompt_command
