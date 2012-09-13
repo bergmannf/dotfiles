@@ -6,3 +6,4 @@
 .emacs.d/semanticdb
 .emacs.d/auto-save-list
 .emacs.d/eshell
+.vim/bundle/
