@@ -6,4 +6,15 @@
 .emacs.d/semanticdb
 .emacs.d/auto-save-list
 .emacs.d/eshell
+.emacs.d/backup
+.emacs.d/elpa/*
+.emacs.d/semanticdb
+.emacs.d/auto-save-list
+.emacs.d/bookmarks
+.emacs.d/tramp
+.emacs.d/.emacs.desktop
+[#]*[#]
+.\#*
+*~
+
 .vim/bundle/

@@ -10,6 +10,7 @@
  '(global-auto-revert-mode t)
  '(inferior-lisp-program "clisp")
  '(org-agenda-files (quote ("~/Documents/books.org")))
+ '(rst-level-face-base-color "black")
  '(send-mail-function (quote mailclient-send-it))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
@@ -18,7 +19,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 90 :width normal)))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
 
 ;; Obtain el-get package management.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -42,12 +43,7 @@
    yasnippet
    zencoding-mode
    el-get
-   csharp-mode
-   rope
-   ropemacs
-   ropemode
-   virtualenv
-   pymacs))
+   csharp-mode))
 
 (setq my:el-get-packages
       (append
