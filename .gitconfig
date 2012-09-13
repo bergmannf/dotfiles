@@ -10,6 +10,4 @@ cmd = emacs --eval \"(ediff-files \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [difftool "ediffclient"]
 cmd = emacsclient --eval \"(ediff-files \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [merge]
-    tool = mymeld
-[mergetool "mymeld"]
-    cmd = ~/git-meld.sh $BASE $LOCAL $REMOTE $MERGED
+    tool = meld
