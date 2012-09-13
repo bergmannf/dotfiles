@@ -1,7 +1,21 @@
+set nocompatible
 filetype off " Needed for pathogen to load all filetype plugins
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'candy.vim'
+Bundle 'github-theme'
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
+Bundle 'Guardian'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'msanders/snipmate.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tsaleh/vim-supertab'
 
 set encoding=utf8
 set fileencoding=utf8
@@ -72,7 +86,6 @@ set undolevels=1000 "allow many undo levels
 set title
 set nobackup " do not write backup files
 set noswapfile " do not write swap files.
-set nocompatible
 set list    " Show invisible characters
 set listchars=tab:▸\ ,eol:¬
 set number        " always show line numbers
@@ -110,12 +123,12 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : \ '<C-x><C-o><C-n><C-p><C-r>=pumv
 " Set font and colorscheme.
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
+        set guifont=DejaVu\ Sans\ Mono\ 9
 
     elseif has("gui_win32")
         set guifont=ProggyCleanTT:h12:cANSI
     endif
-    colors wombat
+    colors github
 else
     set t_Co=256
     colors wombat256
