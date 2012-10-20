@@ -21,21 +21,25 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
 
+(setenv "PATH"
+        (concat
+         "~/Scripts/sbt/bin/" ":"
+         (getenv "PATH")))
+
 ;; Obtain el-get package management.
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)
   (url-retrieve
    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
    (lambda (s)
-   (let (el-get-master-branch)
-     (goto-char (point-max))
-     (eval-print-last-sexp)))))
+     (let (el-get-master-branch)
+       (goto-char (point-max))
+       (eval-print-last-sexp)))))
 
 ;; Setup packages to fetch via el-get
 (setq
  my:el-get-packages
  '(auto-complete
-   evil
    haskell-mode
    helm
    magit
@@ -43,7 +47,8 @@
    yasnippet
    zencoding-mode
    el-get
-   csharp-mode))
+   scala-mode
+   markdown-mode))
 
 (setq my:el-get-packages
       (append
@@ -53,12 +58,12 @@
 (print my:el-get-packages)
 ;; Dependencies for el-get package management.
 ;; install new packages and init already installed packages
-(el-get 'sync my:el-get-packages)`
+(el-get 'sync my:el-get-packages)
 
 (require 'package)
 (add-to-list 'package-archives
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+             '("marmalade" .
+               "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; Set-up packages downloaded via el-get
@@ -81,8 +86,8 @@
 (require 'helm-projectile)
 (global-set-key (kbd "C-c h") 'helm-projectile)
 
-; make "kj" behave as ESC key ,adapted from http://permalink.gmane.org/gmane.emacs.vim-emulation/
-; you can easily change it to map "jj" or "kk" or "jk" to ESC)
+                                        ; make "kj" behave as ESC key ,adapted from http://permalink.gmane.org/gmane.emacs.vim-emulation/
+                                        ; you can easily change it to map "jj" or "kk" or "jk" to ESC)
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
 
 (evil-define-command cofi/maybe-exit ()
@@ -166,3 +171,13 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-packages/python/")
 (require 'python)
+
+(add-to-list 'load-path "~/.emacs.d/site-packages/ensime/elisp")
+(require 'ensime)
+
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(put 'erase-buffer 'disabled nil)
+
+;; Setup markdown mode for stackoverflow.
+(add-to-list 'auto-mode-alist '("stack\\(exchange\\|overflow\\)\\.com\\.[a-z0-9]+\\.txt" . markdown-mode))
+(put 'dired-find-alternate-file 'disabled nil)

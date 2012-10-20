@@ -145,3 +145,8 @@ PROMPT_COMMAND=_prompt_command
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
+
+PATH="~/Scripts/sbt/bin/:$PATH"
+export PATH
+
+bind "set completion-ignore-case On"

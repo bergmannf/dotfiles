@@ -16,5 +16,6 @@
 [#]*[#]
 .\#*
 *~
-
+!.vim/bundle/vundle
 .vim/bundle/
+.emacs.d/site-packages/ensime/

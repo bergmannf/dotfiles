@@ -4,6 +4,8 @@ filetype off " Needed for pathogen to load all filetype plugins
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+Bundle 'gmarik/vundle'
+
 Bundle 'candy.vim'
 Bundle 'github-theme'
 Bundle 'gmarik/vundle'
@@ -16,6 +18,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-supertab'
+Bundle 'vim-scala'
 
 set encoding=utf8
 set fileencoding=utf8
