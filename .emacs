@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(column-number-mode t)
- '(custom-enabled-themes (quote (adwaita)))
+ '(custom-enabled-themes (quote (zenburn)))
+ '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" "21d9280256d9d3cf79cbcf62c3e7f3f243209e6251b215aede5026e0c5ad853f" default)))
  '(ede-project-directories (quote ("/home/florian/Code/OposParser")))
  '(global-auto-revert-mode t)
  '(inferior-lisp-program "clisp")

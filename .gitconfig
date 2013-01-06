@@ -11,3 +11,5 @@ cmd = emacs --eval \"(ediff-files \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 cmd = emacsclient --eval \"(ediff-files \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [merge]
     tool = meld
+[core]
+	autocrlf = input
