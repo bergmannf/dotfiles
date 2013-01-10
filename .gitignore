@@ -19,3 +19,7 @@
 !.vim/bundle/vundle
 .vim/bundle/
 .emacs.d/site-packages/ensime/
+/.emacs.d/.ido.last
+/.emacs.d/ac-comphist.dat
+/.emacs.d/url/cookies
+/target/.history

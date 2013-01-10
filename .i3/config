@@ -14,6 +14,7 @@ set $blue #003366
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
+# font -*-terminus-bold-r-normal-*-12-*-72-72-*-*-*-*
 font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -86,6 +87,7 @@ set $ws3 3: Mus
 set $ws4 4: Gra
 set $ws5 5: Rea
 set $ws6 6: Gam
+set $ws7 7: Cha
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -93,7 +95,7 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace 7
+bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
@@ -105,7 +107,7 @@ bindsym $mod+Shift+numbersign move container to workspace $ws3
 bindsym $mod+Shift+dollar move container to workspace $ws4
 bindsym $mod+Shift+percent move container to workspace $ws5
 bindsym $mod+Shift+asciicircum move container to workspace $ws6
-bindsym $mod+Shift+ampersand move container to workspace 7
+bindsym $mod+Shift+ampersand move container to workspace $ws7
 bindsym $mod+Shift+asterisk move container to workspace 8
 bindsym $mod+Shift+parenleft move container to workspace 9
 bindsym $mod+Shift+parenright move container to workspace 10
@@ -113,12 +115,13 @@ bindsym $mod+Shift+parenright move container to workspace 10
 # Assigning applications to special workspaces
 
 assign [class="Firefox"]  $ws1
-assign [class="[Ii]dea"]  $ws2
 assign [class="Emacs"]    $ws2
 assign [class="Gvim"]     $ws2
 assign [class="Inkscape"] $ws4
 assign [class="Gimp"]     $ws4
 assign [class="Steam"]    $ws6
+assign [class="Skype"]    $ws7
+assign [class="Pidgin"]   $ws7
 
 # Change monitor of workspace
 bindsym $mod+x move workspace to output right
@@ -129,6 +132,10 @@ bindsym $mod+Shift+C reload
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
+# Audio controls
+bindsym $mod+F5 amixer -q set Master 5%-
+bindsym $mod+F6 amixer -q set Master 5%+
+bindsym $mod+F7 amixer -q set Master toggle
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -159,8 +166,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    font pango:FixedSys 10
     position top
-    status_command i3status
+    status_command ~/.conky
+    tray_output primary
     colors {
            statusline #AAAAAA
            background #000000
