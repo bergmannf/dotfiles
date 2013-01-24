@@ -1,5 +1,5 @@
 ! urxvt*font: xft:Bitstream Vera Sans Mono:size=10
-urxvt*font: xft:Inconsolata-XL:size=10
+urxvt*font: xft:Inconsolata-XL:size=11
 urxvt*scrollBar: false
 urxvt*internalborder: 6
 urxvt.urgentOnBell: true
@@ -10,8 +10,8 @@ URxvt.perl-lib: ~/dotfiles/urxvt-perls/
 URxvt.perl-ext-common: default,matcher,keyboard-select,clipboard,tabbed
 URxvt.keysym.M-Escape: perl:keyboard-select:search
 URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.urlLauncher: uzbl-browser
 URxvt.matcher.button: 2

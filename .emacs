@@ -4,10 +4,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(ansi-term-color-vector ["#3f3f3f" "#cc9393" "#7f9f7f" "#f0dfaf" "#8cd0d3" "#dc8cc3" "#93e0e3" "#dcdccc"])
  '(column-number-mode t)
- '(custom-enabled-themes (quote (tsdh-dark)))
- '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" "21d9280256d9d3cf79cbcf62c3e7f3f243209e6251b215aede5026e0c5ad853f" default)))
- '(ede-project-directories (quote ("/home/florian/Code/OposParser")))
+ '(custom-enabled-themes (quote (wombat)))
+ '(custom-safe-themes (quote ("27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" "e9a1226ffed627ec58294d77c62aa9561ec5f42309a1f7a2423c6227e34e3581" "71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" "21d9280256d9d3cf79cbcf62c3e7f3f243209e6251b215aede5026e0c5ad853f" default)))
  '(fci-rule-color "#383838")
  '(global-auto-revert-mode t)
  '(inferior-lisp-program "clisp")
@@ -23,50 +23,31 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
 
-(setenv "PATH"
-        (concat
-         "~/Scripts/sbt/bin/" ":"
-         (getenv "PATH")))
-
-;; Obtain el-get package management.
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-   (lambda (s)
-     (let (el-get-master-branch)
-       (goto-char (point-max))
-       (eval-print-last-sexp)))))
-
-;; Setup packages to fetch via el-get
-(setq
- my:el-get-packages
- '(auto-complete
-   haskell-mode
-   helm
-   magit
-   nxhtml
-   yasnippet
-   zencoding-mode
-   el-get
-   scala-mode
-   markdown-mode))
-
-(setq my:el-get-packages
-      (append
-       my:el-get-packages
-       (loop for src in el-get-sources collect (el-get-source-name src))))
-
-(print my:el-get-packages)
-;; Dependencies for el-get package management.
-;; install new packages and init already installed packages
-(el-get 'sync my:el-get-packages)
+(setenv "PATH" (concat "~/Scripts/sbt/bin/" ":" (getenv "PATH")))
 
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" .
-               "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (package-initialize)
+
+(setq elpa-list '(auto-complete
+                  clojure-mode
+                  evil
+                  helm
+                  magit
+                  markdown-mode
+                  nrepl
+                  scala-mode2
+                  sml-mode
+                  yasnippet
+                  ))
+
+(mapcar (lambda (package)
+          (when (not (package-installed-p package))
+            (package-install package))) elpa-list)
 
 ;; Set-up packages downloaded via el-get
 (require 'auto-complete-config)
@@ -88,8 +69,8 @@
 (require 'helm-projectile)
 (global-set-key (kbd "C-c h") 'helm-projectile)
 
-                                        ; make "kj" behave as ESC key ,adapted from http://permalink.gmane.org/gmane.emacs.vim-emulation/
-                                        ; you can easily change it to map "jj" or "kk" or "jk" to ESC)
+; make "kj" behave as ESC key ,adapted from http://permalink.gmane.org/gmane.emacs.vim-emulation/
+; you can easily change it to map "jj" or "kk" or "jk" to ESC)
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
 
 (evil-define-command cofi/maybe-exit ()
