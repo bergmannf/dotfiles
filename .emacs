@@ -6,8 +6,8 @@
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(ansi-term-color-vector ["#3f3f3f" "#cc9393" "#7f9f7f" "#f0dfaf" "#8cd0d3" "#dc8cc3" "#93e0e3" "#dcdccc"])
  '(column-number-mode t)
- '(custom-enabled-themes (quote (wombat)))
- '(custom-safe-themes (quote ("27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" "e9a1226ffed627ec58294d77c62aa9561ec5f42309a1f7a2423c6227e34e3581" "71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" "21d9280256d9d3cf79cbcf62c3e7f3f243209e6251b215aede5026e0c5ad853f" default)))
+ '(custom-enabled-themes (quote (zenburn)))
+ '(custom-safe-themes (quote ("36a309985a0f9ed1a0c3a69625802f87dee940767c9e200b89cdebdb737e5b29" "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" "e9a1226ffed627ec58294d77c62aa9561ec5f42309a1f7a2423c6227e34e3581" "71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" "21d9280256d9d3cf79cbcf62c3e7f3f243209e6251b215aede5026e0c5ad853f" default)))
  '(fci-rule-color "#383838")
  '(global-auto-revert-mode t)
  '(inferior-lisp-program "clisp")
@@ -21,9 +21,36 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
+ '(default ((t (:family "Source Code Pro" :foundry "adobe" :slant normal :weight normal :height 98 :width normal)))))
 
-(setenv "PATH" (concat "~/Scripts/sbt/bin/" ":" (getenv "PATH")))
+(setenv "PATH"
+        (concat
+         "~/Scripts/sbt/bin/" ":"
+         (getenv "PATH")))
+
+;; Obtain el-get package management.
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+   (lambda (s)
+     (let (el-get-master-branch)
+       (goto-char (point-max))
+       (eval-print-last-sexp)))))
+
+;; Setup packages to fetch via el-get
+(setq
+ my:el-get-packages
+ '(ensime))
+
+(setq my:el-get-packages
+      (append
+       my:el-get-packages
+       (loop for src in el-get-sources collect (el-get-source-name src))))
+
+;; Dependencies for el-get package management.
+;; install new packages and init already installed packages
+(el-get 'sync my:el-get-packages)
 
 (require 'package)
 (add-to-list 'package-archives
@@ -40,6 +67,7 @@
                   magit
                   markdown-mode
                   nrepl
+                  ac-nrepl
                   scala-mode2
                   sml-mode
                   yasnippet
@@ -55,6 +83,24 @@
 (define-key ac-mode-map (kbd "<C-tab>") 'auto-complete)
 (ac-set-trigger-key "TAB")
 (setq ac-auto-start t)
+
+;; Set-up NREPL for auto-complete
+
+(require 'ac-nrepl)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'nrepl-mode))
+
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
+
 (require 'yasnippet)
 (yas/global-mode 1)
 ;; Always turn on evil mode
@@ -164,3 +210,8 @@
 ;; Setup markdown mode for stackoverflow.
 (add-to-list 'auto-mode-alist '("stack\\(exchange\\|overflow\\)\\.com\\.[a-z0-9]+\\.txt" . markdown-mode))
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Setup rainbow-delimiters
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)

@@ -146,7 +146,7 @@ PROMPT_COMMAND=_prompt_command
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 
-PATH="~/Scripts/:~/Scripts/sbt/bin/:$PATH"
+PATH="~/Applications/clojure/:~/Scripts/:~/Scripts/sbt/bin/:/opt/texlive/bin/:$PATH"
 export PATH
 
 export _JAVA_OPTIONS='-Dswing.aatext=true -Dawt.useSystemAAFontSettings=on' 

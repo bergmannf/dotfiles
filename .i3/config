@@ -117,6 +117,7 @@ bindsym $mod+Shift+parenright move container to workspace 10
 assign [class="Firefox"]  $ws1
 assign [class="Emacs"]    $ws2
 assign [class="Gvim"]     $ws2
+assign [class="Gmpc"]     $ws3
 assign [class="Inkscape"] $ws4
 assign [class="Gimp"]     $ws4
 assign [class="Steam"]    $ws6
