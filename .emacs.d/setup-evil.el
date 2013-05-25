@@ -1,8 +1,8 @@
 ;; Always turn on evil mode
 (evil-mode 1)
 
-                                        ; make "kj" behave as ESC key ,adapted from http://permalink.gmane.org/gmane.emacs.vim-emulation/
-                                        ; you can easily change it to map "jj" or "kk" or "jk" to ESC)
+; make "kj" behave as ESC key ,adapted from http://permalink.gmane.org/gmane.emacs.vim-emulation/
+; you can easily change it to map "jj" or "kk" or "jk" to ESC)
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
 
 (evil-define-command cofi/maybe-exit ()
@@ -20,3 +20,6 @@
         (push 'escape unread-command-events))
        (t (setq unread-command-events (append unread-command-events
                                               (list evt))))))))
+
+;; Use the color theme's default cursor color and NOT black!
+(setq evil-default-cursor t)

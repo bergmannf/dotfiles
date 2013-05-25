@@ -13,6 +13,8 @@
 .emacs.d/bookmarks
 .emacs.d/tramp
 .emacs.d/.emacs.desktop
+.emacs.d/request/
+.emacs.d/session.*
 [#]*[#]
 .\#*
 *~

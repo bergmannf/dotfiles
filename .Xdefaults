@@ -1,3 +1,4 @@
+Xft.dpi: 96
 ! urxvt*font: xft:Bitstream Vera Sans Mono:size=10
 urxvt.font: xft:Monospace:size=12
 urxvt*scrollBar: false
@@ -50,3 +51,5 @@ urxvt.color14:    #F79321
 !white
 urxvt.color7:     #E7E8E9
 urxvt.color15:    #F3F3F4
+
+Emacs.Fontbackend: xft

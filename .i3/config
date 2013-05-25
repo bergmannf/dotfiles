@@ -15,7 +15,7 @@ set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
 # font -*-terminus-bold-r-normal-*-12-*-72-72-*-*-*-*
-font pango:DejaVu Sans Mono 10
+font xft:Liberation Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -181,3 +181,4 @@ bar {
 
 exec redshift -l 55:10
 exec xrandr --output DFP11 --mode 1920x1080
+exec dropbox start

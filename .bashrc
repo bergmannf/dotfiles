@@ -149,6 +149,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 PATH="~/Applications/clojure/:~/Scripts/:~/Scripts/sbt/bin/:/opt/texlive/bin/:$PATH"
 export PATH
 
-export _JAVA_OPTIONS='-Dswing.aatext=true -Dawt.useSystemAAFontSettings=on' 
+export _JAVA_OPTIONS='-Dswing.aatext=true -Dawt.useSystemAAFontSettings=lcd' 
 
 bind "set completion-ignore-case On"
