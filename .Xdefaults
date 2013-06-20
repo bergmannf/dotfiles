@@ -1,22 +1,22 @@
 Xft.dpi: 96
 ! urxvt*font: xft:Bitstream Vera Sans Mono:size=10
-urxvt.font: xft:Monospace:size=12
-urxvt*scrollBar: false
-urxvt*internalborder: 6
+URxvt.font: 9x15
+urxvt.scrollBar: true
+urxvt.internalborder: 6
 urxvt.urgentOnBell: true
 
-URxvt.saveLines:32767
+urxvt.saveLines:32767
 
-URxvt.perl-lib: ~/dotfiles/urxvt-perls/
-URxvt.perl-ext-common: default,matcher,keyboard-select,clipboard,tabbed
-URxvt.keysym.M-Escape: perl:keyboard-select:search
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-URxvt.urlLauncher: uzbl-browser
-URxvt.matcher.button: 2
-URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+urxvt.perl-lib: ~/dotfiles/urxvt-perls/
+urxvt.perl-ext-common: default,matcher,tabbed
+! urxvt.keysym.M-Escape: perl:keyboard-select:search
+! urxvt.keysym.M-s: perl:keyboard-select:search
+! urxvt.keysym.Shift-Control-C: perl:clipboard:copy
+! urxvt.keysym.Shift-Control-V: perl:clipboard:paste
+! urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+urxvt.urlLauncher: uzbl-browser
+urxvt.matcher.button: 2
+urxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
 urxvt.foreground: #DDCCBB
 

@@ -17,7 +17,8 @@
  '(scroll-bar-mode (quote right))
  '(send-mail-function (quote mailclient-send-it))
  '(show-paren-mode t)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(transient-mark-mode 1))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
