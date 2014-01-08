@@ -3,4 +3,4 @@
 (ac-config-default)
 (define-key ac-mode-map (kbd "<C-tab>") 'auto-complete)
 (ac-set-trigger-key "TAB")
-(setq ac-auto-start t)
+(setq ac-auto-start 2)

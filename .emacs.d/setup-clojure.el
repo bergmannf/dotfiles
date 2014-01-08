@@ -1,28 +1,12 @@
-;; Set-up NREPL for auto-complete
-
 (require 'ac-nrepl)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-mode-hook 'ac-nrepl-setup)
 (eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'nrepl-mode))
+  '(add-to-list 'ac-modes 'cider-repl-mode))
 
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions
-        '(auto-complete)))
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
-(add-hook 'auto-complete-mode-hook
-          'set-auto-complete-as-completion-at-point-function)
-
-(add-hook 'nrepl-mode-hook
-          'set-auto-complete-as-completion-at-point-function)
-
-(add-hook 'nrepl-interaction-mode-hook
-          'set-auto-complete-as-completion-at-point-function)
-
-(add-hook 'nrepl-interaction-mode-hook
-          'nrepl-turn-on-eldoc-mode)
-
-(add-hook 'nrepl-mode-hook 'subword-mode)
+(setq cider-repl-print-length 100)
 
 ;; Setup rainbow-delimiters
 
