@@ -155,6 +155,10 @@
 
 ;; Load auto-complete-setup
 (load "~/.emacs.d/setup-auto-complete.el")
+
+;; Load python-setup
+(load "~/.emacs.d/setup-python.el")
+
 (put 'erase-buffer 'disabled nil)
 (load-theme 'base16-monokai)
 (put 'narrow-to-region 'disabled nil)

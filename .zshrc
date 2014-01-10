@@ -27,7 +27,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/venv
+export PIP_DOWNLOAD_CACHE=~/.pip/
+source $HOME/.local/bin/virtualenvwrapper.sh
+
 
 
 # Customize to your needs...
