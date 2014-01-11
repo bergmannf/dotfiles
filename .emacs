@@ -33,7 +33,7 @@
 
 (setenv "PATH"
         (concat
-         "~/bin/" ":"
+         (expand-file-name "~/bin/") ":"
          (getenv "PATH")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
