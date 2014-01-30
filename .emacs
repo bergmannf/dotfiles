@@ -6,18 +6,25 @@
  '(ansi-color-names-vector
    ["#383830" "#f92672" "#a6e22e" "#f4bf75" "#66d9ef" "#ae81ff" "#66d9ef" "#f5f4f1"])
  '(ansi-term-color-vector
-   [unspecified "#383830" "#f92672" "#a6e22e" "#f4bf75" "#66d9ef" "#ae81ff" "#66d9ef" "#f5f4f1"])
+   [unspecified "#383830" "#f92672" "#a6e22e" "#f4bf75" "#66d9ef" "#ae81ff" "#66d9ef" "#f5f4f1"] t)
+ '(background-color "#202020")
+ '(background-mode dark)
  '(column-number-mode t)
- '(custom-enabled-themes (quote (noctilux)))
+ '(cursor-color "#cccccc")
+ '(custom-enabled-themes (quote (fogus)))
  '(custom-safe-themes
    (quote
-    ("0c311fb22e6197daba9123f43da98f273d2bfaeeaeb653007ad1ee77f0003037" "88d556f828e4ec17ac074077ef9dcaa36a59dccbaa6f2de553d6528b4df79cbd" "e53cc4144192bb4e4ed10a3fa3e7442cae4c3d231df8822f6c02f1220a0d259a" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "f41fd682a3cd1e16796068a2ca96e82cfd274e58b978156da0acce4d56f2b0d5" "405fda54905200f202dd2e6ccbf94c1b7cc1312671894bc8eca7e6ec9e8a41a2" "ae8d0f1f36460f3705b583970188e4fbb145805b7accce0adb41031d99bd2580" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" default)))
+    ("9bcb8ee9ea34ec21272bb6a2044016902ad18646bd09fdd65abae1264d258d89" "e26780280b5248eb9b2d02a237d9941956fc94972443b0f7aeec12b5c15db9f3" "c7359bd375132044fe993562dfa736ae79efc620f68bab36bd686430c980df1c" "91b5a381aa9b691429597c97ac56a300db02ca6c7285f24f6fe4ec1aa44a98c3" "dc46381844ec8fcf9607a319aa6b442244d8c7a734a2625dac6a1f63e34bc4a6" "33c5a452a4095f7e4f6746b66f322ef6da0e770b76c0ed98a438e76c497040bb" "29a4267a4ae1e8b06934fec2ee49472daebd45e1ee6a10d8ff747853f9a3e622" "7d4d00a2c2a4bba551fcab9bfd9186abe5bfa986080947c2b99ef0b4081cb2a6" "90b5269aefee2c5f4029a6a039fb53803725af6f5c96036dee5dc029ff4dff60" "0ebe0307942b6e159ab794f90a074935a18c3c688b526a2035d14db1214cf69c" "a774c5551bc56d7a9c362dca4d73a374582caedb110c201a09b410c0ebbb5e70" "f32dd8e7b3a508874eded03d5be43d2bdfffe81c199eea72de06ce3e653db720" "0c311fb22e6197daba9123f43da98f273d2bfaeeaeb653007ad1ee77f0003037" "88d556f828e4ec17ac074077ef9dcaa36a59dccbaa6f2de553d6528b4df79cbd" "e53cc4144192bb4e4ed10a3fa3e7442cae4c3d231df8822f6c02f1220a0d259a" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "f41fd682a3cd1e16796068a2ca96e82cfd274e58b978156da0acce4d56f2b0d5" "405fda54905200f202dd2e6ccbf94c1b7cc1312671894bc8eca7e6ec9e8a41a2" "ae8d0f1f36460f3705b583970188e4fbb145805b7accce0adb41031d99bd2580" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" default)))
  '(delete-selection-mode nil)
  '(font-use-system-font nil)
+ '(foreground-color "#cccccc")
  '(global-auto-revert-mode t)
  '(inferior-lisp-program "clisp")
+ '(linum-format " %7i ")
  '(mark-even-if-inactive t)
- '(org-agenda-files (quote ("~/Documents/books.org")))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/books/sicp.org" "~/Dropbox/org/blog/topics.org" "~/Dropbox/org/coursera/computer_networks.org" "~/Dropbox/org/index.org")))
  '(rst-level-face-base-color "black")
  '(scroll-bar-mode (quote right))
  '(send-mail-function (quote mailclient-send-it))
@@ -29,7 +36,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "adobe" :slant normal :weight normal :height 97 :width normal)))))
+ '(default ((t (:family "Envy Code R" :foundry "unknown" :slant normal :weight normal :height 97 :width normal)))))
 
 (setenv "PATH"
         (concat
@@ -109,19 +116,21 @@
                   base16-theme
                   cider
                   clojure-mode
-                  ess
                   ein
+                  ess
                   evil
+                  flycheck
                   helm
                   magit
                   markdown-mode
                   multiple-cursors
-                  paredit
                   rainbow-delimiters
+                  smartparens
+                  web-mode
                   yasnippet
                   ))
 
-(mapcar (lambda (package)
+(mapc (lambda (package)
           (when (not (package-installed-p package))
             (package-install package))) elpa-list)
 
@@ -159,6 +168,25 @@
 ;; Load python-setup
 (load "~/.emacs.d/setup-python.el")
 
+;; Load scheme-setup
+(load "~/.emacs.d/setup-scheme.el")
+
+;; Load keybindings
+(load "~/.emacs.d/setup-keybindings.el")
+
+(setq backup-directory-alist
+      '(("." . "~/.saves")))
+
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+(smartparens-global-mode 1)
+
+(when (require 'flycheck nil 'noerror)
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
 (put 'erase-buffer 'disabled nil)
 (load-theme 'base16-monokai)
 (put 'narrow-to-region 'disabled nil)
+
+(provide '.emacs)
+;;; .emacs ends here
