@@ -168,12 +168,6 @@
 ;; Load python-setup
 (load "~/.emacs.d/setup-python.el")
 
-;; Load scheme-setup
-(load "~/.emacs.d/setup-scheme.el")
-
-;; Load keybindings
-(load "~/.emacs.d/setup-keybindings.el")
-
 (setq backup-directory-alist
       '(("." . "~/.saves")))
 
