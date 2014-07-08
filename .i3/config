@@ -135,11 +135,14 @@ bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
-# Audio controls
-bindsym $mod+F5 amixer -q set Master 5%-
-bindsym $mod+F6 amixer -q set Master 5%+
-bindsym $mod+F7 amixer -q set Master toggle
+bindsym $mod+shift+e exit
+# audio controls
+bindsym $mod+F5 exec amixer -q set Master 5%-
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym $mod+F6 exec amixer -q set Master 5%+
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym $mod+F7 exec amixer -q set Master toggle
+bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -171,13 +174,13 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position top
-    status_command i3status
+    status_command ~/.i3/conky
 }
 
 
 exec redshift -l 55:10
 # exec xrandr --output DFP11 --mode 1920x1080
 exec xrandr --output DVI-1 --mode 1920x1080 --right-of DVI-0
-exec setxkbmap -option ctrl:nocaps
+exec setxkbmap -option altwin:swap_alt_win -option ctrl:nocaps
 exec feh --bg-scale "$HOME/Pictures/Wallpapers/38 - Wf2C58G.jpg"
 exec dropbox start
