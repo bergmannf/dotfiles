@@ -12,6 +12,7 @@
                   auto-complete
                   cider
                   clojure-mode
+                  emms
                   ein
                   ess
                   evil

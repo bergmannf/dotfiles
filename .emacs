@@ -128,6 +128,10 @@
 ;; Setup flycheck
 (load "~/.emacs.d/setup-flycheck.el")
 
+(load "~/.emacs.d/setup-helm.el")
+
+(load "~/.emacs.d/setup-emms.el")
+
 (setq backup-directory-alist
       '(("." . "~/.saves")))
 
