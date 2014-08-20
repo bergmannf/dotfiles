@@ -132,6 +132,8 @@
 
 (load "~/.emacs.d/setup-emms.el")
 
+(load "~/.emacs.d/setup-auctex.el")
+
 (setq backup-directory-alist
       '(("." . "~/.saves")))
 
