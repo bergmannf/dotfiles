@@ -1,5 +1,5 @@
 Xft.dpi: 96
-! urxvt*font: xft:Bitstream Vera Sans Mono:size=10
+urxvt*font: xft:Fira Mono:size=10
 URxvt.font: 9x15
 urxvt.scrollBar: true
 urxvt.internalborder: 6
@@ -8,12 +8,12 @@ urxvt.urgentOnBell: true
 urxvt.saveLines:32767
 
 urxvt.perl-lib: ~/dotfiles/urxvt-perls/
-urxvt.perl-ext-common: default,matcher,tabbed
+urxvt.perl-ext-common: default,matcher,tabbed,clipboard
 ! urxvt.keysym.M-Escape: perl:keyboard-select:search
 ! urxvt.keysym.M-s: perl:keyboard-select:search
-! urxvt.keysym.Shift-Control-C: perl:clipboard:copy
-! urxvt.keysym.Shift-Control-V: perl:clipboard:paste
-! urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+urxvt.keysym.Shift-Control-C: perl:clipboard:copy
+urxvt.keysym.Shift-Control-V: perl:clipboard:paste
+urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 urxvt.urlLauncher: uzbl-browser
 urxvt.matcher.button: 2
 urxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
