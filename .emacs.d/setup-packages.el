@@ -7,16 +7,15 @@
 (package-initialize)
 
 (setq elpa-list '(
-                  ac-nrepl
+                  anaconda-mode
                   auctex
-                  auto-complete
                   cider
                   clojure-mode
+                  company
+                  company-anaconda
                   emms
-                  ein
                   ess
                   evil
-                  jedi
                   flycheck
                   geiser
                   helm

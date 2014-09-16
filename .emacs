@@ -3,15 +3,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["#5f5f5f" "#ff4b4b" "#a1db00" "#fce94f" "#5fafd7" "#d18aff" "#afd7ff" "#ffffff"])
  '(background-mode dark)
- '(custom-enabled-themes (quote (moe-light)))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-blue)))
+ '(custom-safe-themes (quote ("82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" default)))
  '(delete-selection-mode nil)
  '(global-auto-revert-mode t)
  '(linum-format " %4i ")
  '(mark-even-if-inactive t)
  '(show-paren-mode t)
- '(tool-bar-mode nil)
- )
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -117,7 +118,8 @@
 (load "~/.emacs.d/setup-clojure.el")
 
 ;; Load auto-complete-setup
-(load "~/.emacs.d/setup-auto-complete.el")
+;; (load "~/.emacs.d/setup-auto-complete.el")
+(load "~/.emacs.d/setup-company.el")
 
 ;; Load python-setup
 (load "~/.emacs.d/setup-python.el")
