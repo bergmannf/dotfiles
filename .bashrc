@@ -144,7 +144,7 @@ function _prompt_command() {
 PROMPT_COMMAND=_prompt_command
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 
 PATH="~/Applications/clojure/:~/Scripts/:~/Scripts/sbt/bin/:/opt/texlive/bin/:$PATH"
 export PATH
