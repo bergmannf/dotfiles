@@ -11,9 +11,7 @@ override_utf8_locale yes
 TEXT
 ,[
 #Finds current volume. May need modified depending on your setup
-  {"full_text": " ♪ ${exec amixer get Master | grep -o "\[.*%\]"} ", "color":"\#268BD2"},
-# Shows the remaining battery time.
-  {"full_text": " ☇ ${battery_time} ", "color":"\#268BD2"},
+  # {"full_text": " ♪ ${exec amixer get Master | grep -o "\[.*%\]"} ", "color":"\#268BD2"},
 #Shows uploadspeed
   {"full_text": " ▲ [${upspeed}] ", "color":"\#ff0000"},
 #Shows downloadspeed
