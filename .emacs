@@ -6,7 +6,7 @@
  '(ansi-color-names-vector ["#5f5f5f" "#ff4b4b" "#a1db00" "#fce94f" "#5fafd7" "#d18aff" "#afd7ff" "#ffffff"])
  '(background-mode dark)
  '(custom-enabled-themes (quote (sanityinc-tomorrow-blue)))
- '(custom-safe-themes (quote ("82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" default)))
+ '(custom-safe-themes (quote ("3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" default)))
  '(delete-selection-mode nil)
  '(global-auto-revert-mode t)
  '(linum-format " %4i ")
@@ -141,8 +141,7 @@
 
 (smartparens-global-mode 1)
 
-(require 'moe-theme)
-(moe-light)
+(load-theme 'zenburn)
 
 (provide '.emacs)
 ;;; .emacs ends here
