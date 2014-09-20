@@ -1,13 +1,11 @@
-Xft.dpi: 96
 urxvt*font: xft:Fira Mono:size=10
-URxvt.font: 9x15
 urxvt.scrollBar: true
 urxvt.internalborder: 6
 urxvt.urgentOnBell: true
 
 urxvt.saveLines:32767
 
-urxvt.perl-lib: $HOME/dotfiles/urxvt/
+urxvt.perl-lib: dotfiles/urxvt/
 urxvt.perl-ext-common: default,matcher,tabbed,clipboard
 ! urxvt.keysym.M-Escape: perl:keyboard-select:search
 ! urxvt.keysym.M-s: perl:keyboard-select:search
