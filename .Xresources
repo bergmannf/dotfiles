@@ -7,12 +7,12 @@ urxvt.urgentOnBell: true
 
 urxvt.saveLines:32767
 
-urxvt.perl-lib: ~/dotfiles/urxvt-perls/
+urxvt.perl-lib: $HOME/dotfiles/urxvt/
 urxvt.perl-ext-common: default,matcher,tabbed,clipboard
 ! urxvt.keysym.M-Escape: perl:keyboard-select:search
 ! urxvt.keysym.M-s: perl:keyboard-select:search
-urxvt.keysym.Shift-Control-C: perl:clipboard:copy
-urxvt.keysym.Shift-Control-V: perl:clipboard:paste
+urxvt.keysym.M-c: perl:clipboard:copy
+urxvt.keysym.M-v: perl:clipboard:paste
 urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 urxvt.urlLauncher: uzbl-browser
 urxvt.matcher.button: 2
