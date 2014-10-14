@@ -137,6 +137,10 @@
 
 (load "~/.emacs.d/setup-auctex.el")
 
+(load "~/.emacs.d/setup-sml.el")
+
+(global-set-key (kbd  "C-x o") 'ace-window)
+
 (setq backup-directory-alist
       '(("." . "~/.saves")))
 

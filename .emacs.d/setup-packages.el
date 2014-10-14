@@ -7,6 +7,7 @@
 (package-initialize)
 
 (setq elpa-list '(
+                  ace-window
                   anaconda-mode
                   auctex
                   cider
