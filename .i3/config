@@ -180,7 +180,7 @@ bar {
 
 exec redshift -l 55:10
 # exec xrandr --output DFP11 --mode 1920x1080
-exec xrandr --output DVI-1 --mode 1920x1080 --right-of DVI-0
+exec xrandr --output DVI-1 --mode 1920x1080 --primary --right-of DVI-0
 exec setxkbmap -option ctrl:nocaps
 exec feh --bg-scale "$HOME/Pictures/Wallpapers/38 - Wf2C58G.jpg"
 exec dropbox start
