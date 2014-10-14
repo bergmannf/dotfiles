@@ -27,8 +27,10 @@
                   quack
                   rainbow-delimiters
                   smartparens
+                  sml-mode
                   solarized-theme
                   web-mode
+                  virtualenvwrapper
                   yasnippet
                   zenburn-theme
                   ))
