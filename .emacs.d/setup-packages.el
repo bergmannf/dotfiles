@@ -19,6 +19,7 @@
                   evil
                   flycheck
                   geiser
+                  haskell-mode
                   helm
                   kivy-mode
                   magit
