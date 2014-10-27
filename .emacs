@@ -9,6 +9,7 @@
  '(custom-safe-themes (quote ("3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" default)))
  '(delete-selection-mode nil)
  '(global-auto-revert-mode t)
+ '(helm-external-programs-associations (quote (("mp4" . "smplayer"))))
  '(linum-format " %4i ")
  '(mark-even-if-inactive t)
  '(show-paren-mode t)
@@ -136,6 +137,10 @@
 (load "~/.emacs.d/setup-emms.el")
 
 (load "~/.emacs.d/setup-auctex.el")
+
+(load "~/.emacs.d/setup-haskell.el")
+
+(load "~/.emacs.d/setup-hunspell.el")
 
 (load "~/.emacs.d/setup-sml.el")
 
