@@ -140,6 +140,8 @@
 
 (load "~/.emacs.d/setup-haskell.el")
 
+(load "~/.emacs.d/setup-smartparens.el")
+
 (load "~/.emacs.d/setup-hunspell.el")
 
 (load "~/.emacs.d/setup-sml.el")
