@@ -3,15 +3,16 @@
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 (package-initialize)
 
-(setq elpa-list '(
-                  ace-window
+(setq elpa-list '(ace-window
                   anaconda-mode
                   auctex
                   cider
-                  clojure-mode
                   company
                   company-anaconda
                   emms
@@ -34,8 +35,7 @@
                   web-mode
                   virtualenvwrapper
                   yasnippet
-                  zenburn-theme
-                  ))
+                  zenburn-theme))
 
 (mapc (lambda (package)
           (when (not (package-installed-p package))
