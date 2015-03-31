@@ -6,6 +6,7 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
+(add-to-list 'package-pinned-packages '(emmet-mode . "marmalade") t)
 
 (package-initialize)
 
@@ -15,6 +16,7 @@
                   cider
                   company
                   company-anaconda
+                  emmet-mode
                   emms
                   ess
                   evil
