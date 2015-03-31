@@ -15,9 +15,3 @@
       "';'.join(module_completion('''%s'''))\n"
       python-shell-completion-string-code
       "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
-
-;; Setup JEDI for python buffers
-
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
