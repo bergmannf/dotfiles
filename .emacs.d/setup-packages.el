@@ -24,11 +24,13 @@
                   geiser
                   haskell-mode
                   helm
+                  helm-projectile
                   kivy-mode
                   magit
                   markdown-mode
                   moe-theme
                   multiple-cursors
+                  projectile
                   quack
                   rainbow-delimiters
                   smartparens
