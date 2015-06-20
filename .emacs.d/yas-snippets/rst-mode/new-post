@@ -1,0 +1,19 @@
+# -*- mode: rst; require-final-newline: nil -*-
+# name: Create a new Pelican post
+# key: new-post
+# binding: direct-keybinding
+# contributor: Florian Bergmann
+# expand-env: ((yas-indent-line 'fixed))
+# --
+$1
+${1:$(replace-regexp-in-string "." "#" yas-text)}
+
+:date: `(shell-command-to-string "date +'%Y-%m-%d %H:%M'")`
+:modified: `(shell-command-to-string "date +'%Y-%m-%d %H:%M'")`
+:tags: $2
+:category: $3
+:slug: $4
+:authors: Florian Bergmann
+:summary: $5
+
+$0
