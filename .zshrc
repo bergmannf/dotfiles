@@ -34,5 +34,9 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 
 
 # Customize to your needs...
-export PATH=~/bin:~/lib:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/texlive/bin/x86_64-linux/:/usr/games:$PATH
+export PATH=~/.local/bin:~/bin:~/lib:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/texlive/bin/x86_64-linux/:/usr/games:$PATH
 export _JAVA_OPTIONS='-Dswing.aatext=true -Dawt.useSystemAAFontSettings=on -Dawt.RenderingHint=lcd' 
+
+if [ -d "$HOME/.cabal/bin" ]; then
+    export PATH="$PATH:$HOME/.cabal/bin"
+fi
