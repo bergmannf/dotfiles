@@ -146,6 +146,8 @@
 
 (load "~/.emacs.d/setup-sml.el")
 
+(load "~/.emacs.d/setup-org.el")
+
 (global-set-key (kbd  "C-x o") 'ace-window)
 
 (setq backup-directory-alist
