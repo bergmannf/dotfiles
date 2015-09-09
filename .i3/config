@@ -116,13 +116,13 @@ bindsym $mod+Shift+parenright move container to workspace 10
 
 assign [class="Firefox"]     $ws1
 assign [class="Iceweasel"]   $ws1
+assign [class="Chromium"]    $ws1
 assign [class="Emacs"]       $ws2
 assign [class="Gvim"]        $ws2
 assign [class="Gmpc"]        $ws3
 assign [class="Inkscape"]    $ws4
 assign [class="Gimp"]        $ws4
-assign [class="calibre-gui"] $ws5
-assign [class="Calibre-gui"] $ws5
+assign [instance="calibre-gui"] $ws5
 assign [class="Steam"]       $ws6
 assign [class="Skype"]       $ws7
 assign [class="Pidgin"]      $ws7
@@ -180,7 +180,7 @@ bar {
 
 exec redshift -l 55:10
 # exec xrandr --output DFP11 --mode 1920x1080
-exec xrandr --output DVI-1 --mode 1920x1080 --primary --right-of DVI-0
+exec xrandr --output "DVI-1" --mode 1920x1080 --primary --output "DVI-0" --mode 1280x1024 --left-of "DVI-1"
 exec setxkbmap -option ctrl:nocaps
 exec feh --bg-scale "$HOME/Pictures/Wallpapers/38 - Wf2C58G.jpg"
 exec dropbox start
