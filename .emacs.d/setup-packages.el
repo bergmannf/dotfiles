@@ -6,6 +6,9 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
+(add-to-list 'package-pinned-packages '(haskell-mode . "melpa-stable") t)
+(add-to-list 'package-pinned-packages '(ghc . "melpa-stable") t)
+(add-to-list 'package-pinned-packages '(company-ghc . "melpa-stable") t)
 (add-to-list 'package-pinned-packages '(emmet-mode . "marmalade") t)
 
 (package-initialize)
@@ -16,11 +19,13 @@
                   cider
                   company
                   company-anaconda
+                  company-ghc
                   emmet-mode
                   emms
                   ess
                   evil
                   flycheck
+                  ghc
                   geiser
                   haskell-mode
                   helm
