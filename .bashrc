@@ -141,13 +141,16 @@ function _prompt_command() {
     PS1="`_git_prompt``virtual_env`"'[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\w\[\033[0m\]]$ '
 }
 
+PATH="$HOME/.local/bin/:/opt/texlive/bin/:$PATH"
+export PATH
+
 PROMPT_COMMAND=_prompt_command
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source ~/.local/bin/virtualenvwrapper.sh
-
-PATH="~/Applications/clojure/:~/Scripts/:~/Scripts/sbt/bin/:/opt/texlive/bin/:$PATH"
-export PATH
+VIRTUALENVWRAPPER_SH="$HOME/.local/bin/virtualenvwrapper.sh"
+if [[ -f "$VIRTUALENVWRAPPER_SH" ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+    source "$VIRTUALENVWRAPPER_SH"
+fi
 
 export _JAVA_OPTIONS='-Dswing.aatext=true -Dawt.useSystemAAFontSettings=lcd' 
 
