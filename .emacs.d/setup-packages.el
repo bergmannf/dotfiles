@@ -30,11 +30,13 @@
                   haskell-mode
                   helm
                   helm-projectile
+                  htmlize
                   kivy-mode
                   magit
                   markdown-mode
                   moe-theme
                   multiple-cursors
+                  ox-reveal
                   projectile
                   quack
                   rainbow-delimiters
