@@ -1,150 +1,45 @@
--- ~/.xmonad/xmonad.hs
--- Imports {{{
 import XMonad
--- Prompt
-import XMonad.Prompt
-import XMonad.Prompt.RunOrRaise (runOrRaisePrompt)
-import XMonad.Prompt.AppendFile (appendFilePrompt)
--- Hooks
-import XMonad.Operations
- 
-import System.IO
-import System.Exit
- 
-import XMonad.Util.Run
-import XMonad.Util.EZConfig
- 
-import XMonad.Actions.CycleWS
- 
+import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
-import XMonad.Hooks.SetWMName
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.UrgencyHook
-import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.EwmhDesktops
- 
-import XMonad.Layout.NoBorders (smartBorders, noBorders)
-import XMonad.Layout.PerWorkspace (onWorkspace, onWorkspaces)
-import XMonad.Layout.Reflect (reflectHoriz)
-import XMonad.Layout.IM
-import XMonad.Layout.SimpleFloat
-import XMonad.Layout.Spacing
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.LayoutHints
-import XMonad.Layout.LayoutModifier
-import XMonad.Layout.Grid
- 
-import Data.Ratio ((%))
-
-import XMonad.Config.Xfce
- 
-import qualified XMonad.StackSet as W
-import qualified Data.Map as M
-
-main = do
-    xmonad $ withUrgencyHook NoUrgencyHook $ xfceConfig
-        { borderWidth = myBorderWidth
-        , normalBorderColor = myBorderColor
-        , focusedBorderColor = myFocusedBorderColor
-        , terminal = myTerminal
-        , manageHook = myManageHook <+> manageHook defaultConfig
-        , modMask = mod4Mask
-        , layoutHook = avoidStruts $ myLayoutHook
-       -- , logHook = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
-        , logHook = ewmhDesktopsLogHook
-        , startupHook = ewmhDesktopsStartup
-        , workspaces = myWorkspaces
-        }
-        `additionalKeys`
-        [ ((mod1Mask, xK_p), spawn "dmenu_run -nb '#3f3f3f' -nf '#dcdccc' -sb '#dcdccc' -sf '#3f3f3f'")
-        , ((mod1Mask, xK_q), spawn "killall conky dzen2 trayer redshift && xmonad --recompile && xmonad --restart") 
-        , ((mod1Mask .|. shiftMask, xK_q), spawn "xfce4-session-logout")]
-
--- Constants
-myBorderWidth = 2
-myBorderColor = "#e9b96e"
-myFocusedBorderColor = "#f57900"
-myBitmapDir = "/home/florian/.dzen/icons"
-myTerminal = "xfce4-terminal"
-myWorkspaces = ["1:main", "2:web", "3:dev", "4:chat", "5:music", "6:graphics"]
-myFont = "-*-terminus-medium-*-*-*-12-120-75-75-*-*-iso8859-*"
-conqyBarSetup = "/home/florian/.xmonad/dzen.sh '" ++ dzenForeGround ++ "' '" ++ dzenBackGround ++ "' '" ++ myFont ++ "'"
-myXmonadBar = "dzen2 -x '0' -y '0' -h '20' -ta 'l' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 1 -fn '" ++ myFont ++ "'"
-myAutostarts = "/home/florian/.xmonad/autostarts.sh"
--- myConqyBar = "conky -c ~/.dzen/.dzen_conky | dzen2 -y '0' -h '20' -ta 'r' -fg '" ++ dzenForeGround ++ "' -bg '" ++ dzenBackGround ++ "' -xs 2 -fn '" ++ myFont ++ "'"
+import XMonad.Layout.Fullscreen hiding (fullscreenEventHook)
+import XMonad.Util.SpawnOnce(spawnOnce)
+import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Actions.CycleWS(swapNextScreen)
+import System.IO
 
 
---Colors
-dzenForeGround = "#FFFFFF"
-dzenFocusColor = "#f57900"
-dzenNonFocusColor = "#e9b96e"
-dzenBackGround = "#000000"
-dzenUnknownColor = "#babdb6"
-dzenUrgentColor = "#cc0000"
+myWorkspaces = ["Web", "Dev", "Mus", "Gam", "Read", "6", "7", "8", "9"]
+myTerminal = "gnome-terminal"
 
-myManageHook = composeAll . concat $
-    [ [resource     =?  r --> doIgnore             | r <- myIgnore ]
-    , [className    =?  c --> doShift "2:web"      | c <- myWebs ]
-    , [className    =?  c --> doShift "3:dev"      | c <- myDev ]
-    , [className    =?  c --> doShift "4:chat"     | c <- myChat ]
-    , [className    =?  c --> doShift "5:music"    | c <- myMusic ]
-    , [className    =?  c --> doShift "6:graphics" | c <- myGraphics ]
-    , [isFullscreen --> doFullFloat ]
-    , [manageDocks ]
+myStartUp :: X ()
+myStartUp = do
+  spawnOnce "nm-applet"
+  spawnOnce "redshift -l 55:10"
+  spawnOnce "xrandr --output 'DVI-1' --mode 1920x1080 --primary --output 'DVI-0' --mode 1280x1024 --left-of 'DVI-1'"
+
+myManageHook = composeAll
+               [ isFullscreen --> doFullFloat
+               ]
+
+main :: IO ()
+main                       = do
+  xmproc <- spawnPipe "xmobar"
+  xmonad $ ewmh defaultConfig
+    { manageHook      = manageDocks <+> myManageHook <+> manageHook defaultConfig
+    , layoutHook      = avoidStruts  $  layoutHook defaultConfig
+    , handleEventHook = handleEventHook defaultConfig <+> fullscreenEventHook
+    , startupHook     = myStartUp
+    , modMask         = mod4Mask
+    , workspaces      = myWorkspaces
+    , terminal        = myTerminal
+    , logHook         = dynamicLogWithPP xmobarPP
+                             { ppOutput = hPutStrLn xmproc
+                             , ppTitle  = xmobarColor "green" "" . shorten 50
+                             }
+    } `additionalKeys`
+    [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command lock")
+    , ((mod4Mask, xK_x), swapNextScreen)
     ]
-    where
-        role = stringProperty "WM_WINDOW_ROLE"
-        name = stringProperty "WM_NAME"
-
-        -- Classnames
-        myGraphics = ["gimp", "Mypaint"]
-        myMusic = ["Clementine"]
-        myChat = ["Pidgin", "Skype"]
-        myWebs = ["Chromium-browser", "Opera"]
-        myDev = ["Gnome-terminal", "Gvim", "Monodevelop"]
-
-        -- Ignore windows
-        myIgnore = ["desktop", "desktop_window", "notify-osd", "trayer"]
-
-        myDoFullFloat :: ManageHook
-        myDoFullFloat = doF W.focusDown <+> doFullFloat
-
-myLogHook h = dynamicLogWithPP $ dzenPP
-    {
-          ppCurrent = dzenColor dzenFocusColor dzenBackGround . pad
-        , ppVisible = dzenColor dzenNonFocusColor dzenBackGround . pad
-        , ppHidden = dzenColor dzenForeGround dzenBackGround . pad
-        , ppHiddenNoWindows = dzenColor dzenUnknownColor dzenBackGround . pad
-        , ppUrgent = dzenColor dzenUrgentColor dzenBackGround . dzenStrip . pad 
-        , ppSep = " | "
-        , ppLayout = dzenColor dzenFocusColor dzenBackGround .
-            (\x -> case x of
-                "ResizableTall"     ->  "^i(" ++ myBitmapDir ++ "/tall.xbm)"
-                "Mirror ResizableTall"  ->  "^i(" ++ myBitmapDir ++ "/mtall.xbm)"
-                "Full"  -> "^i(" ++ myBitmapDir ++ "/full.xbm)"
-                "Simple Float"  -> "-"
-                _   -> x
-            )
-        , ppTitle = (" " ++) . dzenColor dzenForeGround dzenBackGround . dzenEscape
-        , ppOutput = hPutStrLn h
-    }
-
-myLayoutHook =  onWorkspaces ["1:main", "5:music"] customLayout $
-                onWorkspaces ["6:gimp"] gimpLayout $
-                onWorkspaces ["4:chat"] imLayout $
-                customLayout2
-
-customLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| simpleFloat
-    where
-        tiled = ResizableTall 1 (2/100) (1/2) []
-
-customLayout2 = avoidStruts $ Full ||| tiled ||| Mirror tiled ||| simpleFloat
-    where
-        tiled   = ResizableTall 1 (2/100) (1/2) []
- 
-gimpLayout  = avoidStruts $ withIM (0.11) (Role "gimp-toolbox") $
-              reflectHoriz $
-              withIM (0.15) (Role "gimp-dock") Full
- 
-imLayout    = avoidStruts $ withIM (1%5) (And (ClassName "Pidgin") (Role "buddy_list")) Grid 
