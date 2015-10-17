@@ -21,6 +21,8 @@ myStartUp = do
   spawnOnce "nm-applet"
   spawnOnce "redshift -l 55:10"
   spawnOnce "xrandr --output 'DVI-1' --mode 1920x1080 --primary --output 'DVI-0' --mode 1280x1024 --left-of 'DVI-1'"
+  spawnOnce "xmodmap ~/.Xmodmap"
+  spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --widthtype request --transparent true --tint 0x232A2F --height 16 --monitor 1"
 
 myManageHook = composeAll
                [ className =? "Firefox" --> doShift "1:Web"
