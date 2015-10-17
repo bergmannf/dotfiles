@@ -27,6 +27,7 @@ myStartUp = do
 myManageHook = composeAll
                [ className =? "Firefox" --> doShift "1:Web"
                , className =? "Iceweasel" --> doShift "1:Web"
+               , className =? "google-chrome" --> doShift "1:Web"
                , className =? "Emacs" --> doShift "2:Dev"
                , className =? "Cantata" --> doShift "3:Mus"
                , className =? "vlc" --> doShift "4:Vid"
