@@ -11,8 +11,10 @@ import XMonad.Actions.CycleWS(swapNextScreen)
 import System.IO
 
 
-myWorkspaces = ["Web", "Dev", "Mus", "Gam", "Read", "6", "7", "8", "9"]
+myWorkspaces = ["Web", "Dev", "Mus", "Vid", "Gam", "Read", "7", "8", "9"]
 myTerminal = "gnome-terminal"
+myNormalBorderColor = "#263238"
+myFocusedBorderColor = "#82B1FF"
 
 myStartUp :: X ()
 myStartUp = do
@@ -37,8 +39,11 @@ main                       = do
     , terminal        = myTerminal
     , logHook         = dynamicLogWithPP xmobarPP
                              { ppOutput = hPutStrLn xmproc
-                             , ppTitle  = xmobarColor "green" "" . shorten 50
+                             , ppCurrent = xmobarColor "#C792EA" "" . wrap "[" "]"
+                             , ppTitle  = xmobarColor myFocusedBorderColor "" . shorten 50
                              }
+    , focusedBorderColor = myFocusedBorderColor
+    , normalBorderColor  = myNormalBorderColor
     } `additionalKeys`
     [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command lock")
     , ((mod4Mask, xK_x), swapNextScreen)

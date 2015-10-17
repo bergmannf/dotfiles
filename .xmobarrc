@@ -1,6 +1,6 @@
-Config { font = "-*-droid-sans-mono-*-13-*-*-*-*-*-*-*"
-       , bgColor = "black"
-       , fgColor = "grey"
+Config { font = "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
+       , bgColor = "#232A2F"
+       , fgColor = "#CDD3D3"
        , allDesktops = True
        , commands = [ Run Weather "EGPF" ["-t"," <tempC>C","-L","55","-H","10","--normal","green","--high","red","--low","lightblue"] 36000 
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
@@ -11,5 +11,5 @@ Config { font = "-*-droid-sans-mono-*-13-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | %EGPF%"
+       , template = "%StdinReader% }{ %cpu% | %memory% * %swap% | <fc=#FF516D>%date%</fc> | %EGPF%"
        }
