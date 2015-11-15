@@ -4,6 +4,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.Fullscreen hiding (fullscreenEventHook)
+import XMonad.Layout.NoBorders
 import XMonad.Util.SpawnOnce(spawnOnce)
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
@@ -34,14 +35,24 @@ myManageHook = composeAll
                , className =? "Steam" --> doShift "5:Gam"
                , className =? "libprs500" --> doShift "6:Read"
                , isFullscreen --> doFullFloat
+               , fullscreenManageHook
                ]
+
+myLayouts = avoidStruts (Tall 1 (3/100) (1/2)
+                        ||| Mirror (Tall 1 (3/100) (1/2))
+                        ||| Full)
+            ||| noBorders (fullscreenFull Full)
+
+nonGreedyViews = [((m .|. mod4Mask, k), windows $ f i) -- Replace 'mod1Mask' with your mod key of choice.
+                      | (i, k) <- zip myWorkspaces [xK_1 .. xK_9],
+                  (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 main :: IO ()
 main                       = do
   xmproc <- spawnPipe "xmobar"
   xmonad $ ewmh defaultConfig
     { manageHook      = manageDocks <+> myManageHook <+> manageHook defaultConfig
-    , layoutHook      = avoidStruts  $  layoutHook defaultConfig
+    , layoutHook      = myLayouts
     , handleEventHook = handleEventHook defaultConfig <+> fullscreenEventHook
     , startupHook     = myStartUp
     , modMask         = mod4Mask
@@ -55,6 +66,5 @@ main                       = do
     , focusedBorderColor = myFocusedBorderColor
     , normalBorderColor  = myNormalBorderColor
     } `additionalKeys`
-    [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command lock")
     , ((mod4Mask, xK_x), swapNextScreen)
     ]
