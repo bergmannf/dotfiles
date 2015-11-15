@@ -3,6 +3,7 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
        , fgColor = "#CDD3D3"
        , allDesktops = True
        , position = TopW L 95
+       , pickBroadest = False
        , commands = [ Run Weather "EGPF" ["-t"," <tempC>C","-L","55","-H","10","--normal","green","--high","red","--low","lightblue"] 36000 
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
@@ -12,5 +13,5 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% * %swap% | <fc=#FF516D>%date%</fc> | %EGPF%"
+       , template = "%StdinReader% }{ %mpd% | %cpu% | %memory% * %swap% | <fc=#FF516D>%date%</fc> | %EGPF%"
        }
