@@ -49,7 +49,8 @@ nonGreedyViews = [((m .|. mod4Mask, k), windows $ f i) -- Replace 'mod1Mask' wit
 
 main :: IO ()
 main                       = do
-  xmproc <- spawnPipe "xmobar"
+  xmproc        <- spawnPipe "xmobar -x 0"
+  xmproc_second <- spawnPipe "xmobar -x 1"
   xmonad $ ewmh defaultConfig
     { manageHook      = manageDocks <+> myManageHook <+> manageHook defaultConfig
     , layoutHook      = myLayouts
@@ -59,7 +60,7 @@ main                       = do
     , workspaces      = myWorkspaces
     , terminal        = myTerminal
     , logHook         = dynamicLogWithPP xmobarPP
-                             { ppOutput = hPutStrLn xmproc
+                             { ppOutput = \x -> mapM_ (`hPutStrLn` x) [xmproc, xmproc_second]
                              , ppCurrent = xmobarColor "#C792EA" "" . wrap "[" "]"
                              , ppTitle  = xmobarColor myFocusedBorderColor "" . shorten 50
                              }
