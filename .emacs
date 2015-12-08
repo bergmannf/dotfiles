@@ -59,9 +59,6 @@
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis) ;; alternative would be 'expression
 
-;; Make diff easier to use in tiling window managers
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
 ;; Load changes from disk
 (global-auto-revert-mode 1)
 
@@ -80,14 +77,6 @@
 ;; instead.
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; use ido for minibuffer completion
-(require 'ido)
-(ido-mode t)
-(setq ido-save-directory-list-file "~/.emacs.d/.ido.last")
-(setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point 'guess)
-(setq ido-show-dot-for-dired t)
 
 ;; C-x C-j opens dired with the cursor right on the file you're editing
 (require 'dired-x)
@@ -128,6 +117,10 @@
 
 ;; Setup ERC
 (load "~/.emacs.d/setup-erc.el")
+
+(load "~/.emacs.d/setup-ediff.el")
+
+(load "~/.emacs.d/setup-ido.el")
 
 ;; Setup flycheck
 (load "~/.emacs.d/setup-flycheck.el")
