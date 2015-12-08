@@ -7,6 +7,8 @@
 (add-hook 'haskell-mode-hook (lambda () (electric-indent-local-mode -1)))
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+(add-to-list 'evil-emacs-state-modes 'haskell-interactive-mode)
+(add-to-list 'evil-emacs-state-modes 'haskell-error-mode)
 
 (custom-set-variables
   '(haskell-process-suggest-remove-import-lines t)
