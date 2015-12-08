@@ -127,6 +127,8 @@
 
 (load "~/.emacs.d/setup-helm.el")
 
+(load "~/.emacs.d/setup-html.el")
+
 (load "~/.emacs.d/setup-emms.el")
 
 (load "~/.emacs.d/setup-auctex.el")
