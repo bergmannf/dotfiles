@@ -14,7 +14,7 @@ import System.IO
 
 
 myWorkspaces = ["1:Web", "2:Dev", "3:Mus", "4:Vid", "5:Gam", "6:Read", "7", "8", "9"]
-myTerminal = "gnome-terminal"
+myTerminal = "xfce4-terminal"
 myNormalBorderColor = "#263238"
 myFocusedBorderColor = "#82B1FF"
 
