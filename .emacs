@@ -143,7 +143,7 @@
 
 (load "~/.emacs.d/setup-org.el")
 
-(global-set-key (kbd  "C-x o") 'ace-window)
+(load "~/.emacs.d/setup-ace.el")
 
 (setq backup-directory-alist
       '(("." . "~/.saves")))
