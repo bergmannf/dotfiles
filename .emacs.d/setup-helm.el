@@ -42,4 +42,9 @@
 
 (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
 
+(require 'projectile)
+
+(global-set-key (kbd "C-c f") 'helm-projectile)
+(global-set-key (kbd "C-c C-f") 'helm-projectile)
+
 (helm-mode 1)
