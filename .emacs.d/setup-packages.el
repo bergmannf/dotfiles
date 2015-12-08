@@ -1,17 +1,21 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
-(add-to-list 'package-pinned-packages '(haskell-mode . "melpa-stable") t)
-(add-to-list 'package-pinned-packages '(ghc . "melpa-stable") t)
-(add-to-list 'package-pinned-packages '(company-ghc . "melpa-stable") t)
-(add-to-list 'package-pinned-packages '(emmet-mode . "marmalade") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")))
+
+(setq package-pinned-packages '((cider . "melpa-stable")
+                                (company-ghc . "melpa-stable")
+                                (emmet-mode . "marmalade")
+                                (evil . "melpa-stable")
+                                (ghc . "melpa-stable")
+                                (haskell-mode . "melpa-stable")
+                                (helm . "melpa-stable")
+                                (magit . "melpa-stable")
+                                (yasnippet . "melpa-stable")))
 
 (package-initialize)
+(package-refresh-contents)
 
 (setq elpa-list '(ace-window
                   anaconda-mode
@@ -26,22 +30,18 @@
                   evil
                   flycheck
                   ghc
-                  geiser
                   haskell-mode
                   helm
                   helm-projectile
                   htmlize
-                  kivy-mode
                   magit
                   markdown-mode
                   moe-theme
                   multiple-cursors
                   ox-reveal
                   projectile
-                  quack
                   rainbow-delimiters
                   smartparens
-                  sml-mode
                   solarized-theme
                   web-mode
                   virtualenvwrapper
