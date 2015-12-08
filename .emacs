@@ -102,6 +102,9 @@
 ;; 3. Load complex external setup-config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Extend emacs path
+(load "~/.emacs.d/setup-path.el")
+
 ;; Load evil-config
 (load "~/.emacs.d/setup-evil.el")
 
