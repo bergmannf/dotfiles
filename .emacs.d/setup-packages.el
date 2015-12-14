@@ -12,6 +12,7 @@
                                 (haskell-mode . "melpa-stable")
                                 (helm . "melpa-stable")
                                 (magit . "melpa-stable")
+                                (magit-popup . "melpa-stable")
                                 (yasnippet . "melpa-stable")))
 
 (package-initialize)
