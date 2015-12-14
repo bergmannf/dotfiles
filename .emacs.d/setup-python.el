@@ -26,5 +26,8 @@
             (setq imenu-create-index-function 'python-imenu-create-index))))
 (add-hook 'python-mode-hook 'hs-minor-mode)
 (add-hook 'venv-postactivate-hook 'set-default-interpreter-ipython)
-
 (add-hook 'python-mode-hook 'eldoc-mode)
+
+(eval-after-load "company"
+ '(progn
+   (add-to-list 'company-backends 'company-anaconda)))
