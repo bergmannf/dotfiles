@@ -155,5 +155,7 @@
 
 (load-theme 'zenburn)
 
+(server-start)
+
 (provide '.emacs)
 ;;; .emacs ends here
