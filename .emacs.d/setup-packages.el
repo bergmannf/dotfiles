@@ -26,12 +26,14 @@
 (setq elpa-list '(ace-window
                   anaconda-mode
                   auctex
+                  base16-theme
                   cider
                   company
                   company-anaconda
                   company-ghc
                   emmet-mode
                   emms
+                  ensime
                   ess
                   evil
                   flycheck
