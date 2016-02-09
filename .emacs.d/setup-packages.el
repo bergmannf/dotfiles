@@ -19,6 +19,8 @@
                                 (helm . "melpa-stable")
                                 (magit . "melpa-stable")
                                 (magit-popup . "melpa-stable")
+                                (git-commit . "melpa-stable")
+                                (with-editor . "melpa-stable")
                                 (yasnippet . "melpa-stable")))
 
 (setq elpa-list '(ace-window
