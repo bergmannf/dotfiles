@@ -3,6 +3,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.Fullscreen hiding (fullscreenEventHook)
 import XMonad.Layout.NoBorders
 import qualified XMonad.StackSet as W
@@ -20,6 +21,7 @@ myFocusedBorderColor = "#82B1FF"
 
 myStartUp :: X ()
 myStartUp = do
+  setWMName "LG3D"
   spawnOnce "nm-applet"
   spawnOnce "redshift -l 55:10"
   spawnOnce "xrandr --output 'DVI-1' --mode 1920x1080 --primary --output 'DVI-0' --mode 1280x1024 --left-of 'DVI-1'"
