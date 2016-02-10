@@ -28,3 +28,14 @@
 (setq org-default-notes-file "~/Dropbox/notes/overview.org")
 
 (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
+
+(defun get-til-file ()
+  (let ((category (read-string "Category: "))
+        (topic (read-string "Topic: ")))
+    (expand-file-name (format "~/Documents/til/%s/%s.org" category topic))))
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Documents/organizer.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("l" "TIL entry" entry (file (get-til-file))
+         "* %?\nEntered on %U\n  %i\n  %a")))
