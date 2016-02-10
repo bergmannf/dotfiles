@@ -50,6 +50,7 @@
                   projectile
                   rainbow-delimiters
                   smartparens
+                  spacemacs-theme
                   solarized-theme
                   web-mode
                   virtualenvwrapper
