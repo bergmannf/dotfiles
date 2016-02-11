@@ -90,6 +90,8 @@
 (add-to-list 'auto-mode-alist '("stack\\(exchange\\|overflow\\)\\.com\\.[a-z0-9]+\\.txt" . markdown-mode))
 (put 'dired-find-alternate-file 'disabled nil)
 
+(define-coding-system-alias 'UTF-8 'utf-8)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 2. Package management setup ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

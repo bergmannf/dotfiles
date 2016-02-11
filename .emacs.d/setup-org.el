@@ -2,6 +2,8 @@
 
 (require 'htmlize)
 
+(defvar til-base "~/Documents/til")
+
 (defun add-pcomplete-capf ()
   (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t))
 
