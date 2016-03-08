@@ -10,7 +10,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Util.SpawnOnce(spawnOnce)
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
-import XMonad.Actions.CycleWS(swapNextScreen)
+import XMonad.Actions.CycleWS(swapNextScreen, nextScreen)
 import System.IO
 
 
@@ -70,6 +70,7 @@ main                       = do
     , focusedBorderColor = myFocusedBorderColor
     , normalBorderColor  = myNormalBorderColor
     } `additionalKeys`
-    ([ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command lock")
-    , ((mod4Mask, xK_x), swapNextScreen)
+    ([((mod4Mask, xK_x), swapNextScreen)
+    , ((mod4Mask, xK_o), nextScreen)
+    , ((mod1Mask .|. controlMask, xK_l), spawn "xscreensaver-command -lock")
     ] ++ nonGreedyViews)
