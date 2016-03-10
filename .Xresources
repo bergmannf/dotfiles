@@ -1,3 +1,8 @@
+Xft.*Hinting: 1
+Xft.*RGBA: rgb
+Xft.*hintstyle: hintslight
+Xft.*antialias: 1
+
 urxvt*font: xft:Fira Mono:size=10
 urxvt.scrollBar: true
 urxvt.internalborder: 6
