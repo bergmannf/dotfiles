@@ -26,33 +26,30 @@ urxvt.foreground: #DDCCBB
 ! Brown BG
 !*background: #30251D
 
-! Grey BG
-urxvt.background: #151515
-
-
-!black
-urxvt.color0:     #393939
-urxvt.color8:     #AF875F
-!red
-urxvt.color1:     #BF1E2D
-urxvt.color9:     #E7212A
-!green
-urxvt.color2:     #9DBA3A
-urxvt.color10:    #A9C938
-!yellow
-urxvt.color3:     #F5B915
-urxvt.color11:    #F7D325
-!blue
-urxvt.color4:     #1CA1DB
-urxvt.color12:    #00AFDA
-!magenta
-urxvt.color5:     #652F90
-urxvt.color13:    #894E9F
-!cyan
-urxvt.color6:     #EA7D24
-urxvt.color14:    #F79321
-!white
-urxvt.color7:     #E7E8E9
-urxvt.color15:    #F3F3F4
+! Terminal Colours
+! black
+*color0:  #222233
+*color8:  #333344
+! red
+*color1:  #884444
+*color9:  #EE6666
+! green
+*color2:  #777755
+*color10: #AAAA88
+! yellow
+*color3:  #EEAA55
+*color11: #EECC99
+! blue
+*color4:  #555577
+*color12: #99AABB
+! magenta
+*color5:  #885577
+*color13: #BB8899
+! cyan
+*color6:  #668899
+*color14: #AACCBB
+! white
+*color7:  #CCCCCC
+*color15: #F9F9F9
 
 Emacs.Fontbackend: xft
