@@ -26,7 +26,6 @@
 (setq elpa-list '(ace-window
                   anaconda-mode
                   auctex
-                  base16-theme
                   cider
                   company
                   company-anaconda
