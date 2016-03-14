@@ -48,9 +48,11 @@ conky.text = [[,
     "align": "right",
     "min_width": "99999,9 KiB/s",
     "color": "\#CCCCCC"},
+    ${if_existing /sys/class/battery}
     {"full_text": "<span color='\#AAAA88'></span> ${battery_time}",
     "markup": "pango",
     "color": "\#CCCCCC"},
+    ${endif}
     {"full_text": "${time %H:%M:%S}",
     "markup": "pango",
     "color": "\#CCCCCC"}
