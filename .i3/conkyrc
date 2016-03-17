@@ -24,10 +24,10 @@ conky.config = {
 
 conky.text = [[,
     [
-    {"full_text": "<span color='\#885577'></span> ${execi 30 sensors | grep 'temp1' | cut -c16-19}°C",
+    {"full_text": "<span color='\#885577'></span> ${execi 30 sensors | grep 'TTF0' | cut -c16-19}°C",
     "markup": "pango",
     "color": "\#CCCCCC"},
-    {"full_text": "<span color='\#EE6666'></span> ${execi 30 sensors | grep 'Phys' | cut -c18-19}°C",
+    {"full_text": "<span color='\#EE6666'></span> ${execi 30 sensors | grep 'Core 0' | cut -c16-19}°C",
     "markup": "pango",
     "color": "\#CCCCCC"},
     {"full_text": "<span color='\#EE6666'></span> ${cpubar}",
@@ -52,7 +52,7 @@ conky.text = [[,
     "align": "right",
     "min_width": "99999,9 KiB/s",
     "color": "\#CCCCCC"},
-    ${if_existing /sys/class/battery}
+    ${if_existing /sys/class/power_supply/BAT0}
     {"full_text": "<span color='\#AAAA88'></span> ${battery_time}",
     "markup": "pango",
     "color": "\#CCCCCC"},
