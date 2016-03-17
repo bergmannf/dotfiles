@@ -141,8 +141,10 @@ function _prompt_command() {
     PS1="`_git_prompt``virtual_env`"'[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\w\[\033[0m\]]$ '
 }
 
-PATH="$HOME/.local/bin/:/opt/texlive/bin/:$PATH"
-export PATH
+if [ -d "$HOME/bin" ]; then
+    PATH="$PATH:$HOME/bin"
+    export PATH
+fi
 
 PROMPT_COMMAND=_prompt_command
 
