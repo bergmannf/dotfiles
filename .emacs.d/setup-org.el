@@ -1,5 +1,5 @@
+(require 'cl)
 (require 'ox-reveal)
-
 (require 'htmlize)
 
 (defvar til-base "~/Documents/til")
@@ -31,10 +31,24 @@
 
 (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
 
+(defun folders (path)
+  "Return all folders in the given path.
+
+Will strip the '.' and '..' directories by default."
+  (let* ((files (directory-files path t))
+         (directories (remove-if (lambda (file)
+                                   (not (file-directory-p file)))
+                                 files))
+         (file-names (remove-if (lambda (file)
+                                  (member file '("." "..")))
+                                (mapcar #'file-name-nondirectory directories))))
+    file-names))
+
 (defun get-til-file ()
-  (let ((category (read-string "Category: "))
-        (topic (read-string "Topic: ")))
-    (expand-file-name (format "~/Documents/til/%s/%s.org" category topic))))
+  (let* ((categories (folders til-base))
+         (category (completing-read "Category: " categories))
+         (topic (read-string "Topic: ")))
+    (expand-file-name (format "%s/%s/%s.org" til-base category topic))))
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Documents/organizer.org" "Tasks")
