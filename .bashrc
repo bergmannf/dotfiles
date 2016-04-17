@@ -146,6 +146,11 @@ if [ -d "$HOME/bin" ]; then
     export PATH
 fi
 
+if [ -d "$HOME/.cask/bin" ]; then
+    PATH="$PATH:$HOME/.cask/bin"
+    export PATH
+fi
+
 PROMPT_COMMAND=_prompt_command
 
 VIRTUALENVWRAPPER_SH="$HOME/.local/bin/virtualenvwrapper.sh"
