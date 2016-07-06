@@ -146,6 +146,11 @@ if [ -d "$HOME/bin" ]; then
     export PATH
 fi
 
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$PATH:$HOME/.local/bin"
+    export PATH
+fi
+
 if [ -d "$HOME/.cask/bin" ]; then
     PATH="$PATH:$HOME/.cask/bin"
     export PATH
