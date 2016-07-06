@@ -164,6 +164,16 @@ if [[ -f "$VIRTUALENVWRAPPER_SH" ]]; then
     source "$VIRTUALENVWRAPPER_SH"
 fi
 
-export _JAVA_OPTIONS='-Dswing.aatext=true -Dawt.useSystemAAFontSettings=lcd' 
+export _JAVA_OPTIONS='-Dswing.aatext=true -Dawt.useSystemAAFontSettings=lcd'
+
+POWERLINE_PATH=$(find "$HOME/.local/" -iname 'powerline.sh' -type f | grep "bash")
+
+if [[ -f "$POWERLINE_PATH" ]]; then
+    export _POWERLINE_DIR=$(echo "$POWERLINE_PATH" | sed "s%bindings/.*%%")
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source "$POWERLINE_PATH"
+fi
 
 bind "set completion-ignore-case On"
