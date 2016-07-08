@@ -141,19 +141,20 @@ function _prompt_command() {
     PS1="`_git_prompt``virtual_env`"'[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\w\[\033[0m\]]$ '
 }
 
-if [ -d "$HOME/bin" ]; then
-    PATH="$PATH:$HOME/bin"
-    export PATH
-fi
+PATHS=("$HOME/.local/bin/" "$HOME/bin/" "$HOME/.cask/bin")
 
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$PATH:$HOME/.local/bin"
-    export PATH
-fi
+for P in "${PATHS[@]}"; do
+    if [[ -d "$P" ]]; then
+        PATH="$PATH:$P"
+        export PATH
+    fi
+done
 
-if [ -d "$HOME/.cask/bin" ]; then
-    PATH="$PATH:$HOME/.cask/bin"
-    export PATH
+PY_PATH="$HOME/.osc-plugins/"
+
+if [[ -d "$PY_PATH" ]]; then
+    PYTHONPATH="$PYTHONPATH:$PY_PATH"
+    export PYTHONPATH
 fi
 
 PROMPT_COMMAND=_prompt_command
@@ -176,4 +177,8 @@ if [[ -f "$POWERLINE_PATH" ]]; then
     source "$POWERLINE_PATH"
 fi
 
+export TERMINAL="xfce4-terminal"
+
 bind "set completion-ignore-case On"
+
+alias ibs="osc --apiurl='https://api.suse.de' $*"
