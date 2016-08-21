@@ -137,10 +137,6 @@ function virtual_env() {
     fi
 }
 
-function _prompt_command() {
-    PS1="`_git_prompt``virtual_env`"'[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\w\[\033[0m\]]$ '
-}
-
 PATHS=("$HOME/.local/bin/" "$HOME/bin/" "$HOME/.cask/bin")
 
 for P in "${PATHS[@]}"; do
@@ -156,8 +152,6 @@ if [[ -d "$PY_PATH" ]]; then
     PYTHONPATH="$PYTHONPATH:$PY_PATH"
     export PYTHONPATH
 fi
-
-PROMPT_COMMAND=_prompt_command
 
 VIRTUALENVWRAPPER_SH="$HOME/.local/bin/virtualenvwrapper.sh"
 if [[ -f "$VIRTUALENVWRAPPER_SH" ]]; then
