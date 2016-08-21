@@ -35,6 +35,10 @@ values."
      spell-checking
      syntax-checking
      version-control
+     ;; Added
+     python
+     scala
+     semantic
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -42,7 +46,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(virtualenvwrapper)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(pyvenv company)
+   dotspacemacs-excluded-packages '(company pyvenv)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -249,8 +253,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (setq evil-escape-key-sequence "jk")
   (global-company-mode)
-  (setq-default evil-escape-key-sequence "jk")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
