@@ -101,7 +101,8 @@ set $ws3 3: Mus
 set $ws4 4: Gra
 set $ws5 5: Rea
 set $ws6 6: Gam
-set $ws7 7: Cha
+set $ws7 7: Vid
+set $ws8 8: Rpg
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -110,7 +111,7 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
@@ -135,12 +136,11 @@ assign [class="Emacs"]          $ws2
 assign [class="Gvim"]           $ws2
 assign [class="Gmpc"]           $ws3
 assign [class="Inkscape"]       $ws4
-assign [class="mpv"]            $ws4
 assign [class="Gimp"]           $ws4
 assign [instance="calibre-gui"] $ws5
 assign [class="Steam"]          $ws6
-assign [class="Skype"]          $ws7
-assign [class="Pidgin"]         $ws7
+assign [class="mpv"]            $ws7
+assign [class="maptool"]        $ws8
 
 # Change monitor of workspace
 bindsym $mod+x move workspace to output right
@@ -204,7 +204,7 @@ colors {
 exec redshift -l 55:10
 # exec xrandr --output DFP11 --mode 1920x1080
 exec xrandr --output "DVI-1" --mode 1920x1080 --output "DisplayPort-4" --primary --right-of "DVI-1" --dpi 123
-exec setxkbmap -option ctrl:nocaps
+exec setxkbmap -layout us,de -option grp:alt_shift_toggle,ctrl:nocaps
 exec compton -CGb
 exec xscreensaver
 exec feh --bg-scale "$HOME/Pictures/Wallpapers/38 - Wf2C58G.jpg"
